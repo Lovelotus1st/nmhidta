@@ -1,0 +1,69 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "databases"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "databases" ("last_name", "first_name", "dob", "address", "ssn", "fbin", "picture", "other1", "make", "model", "year", "owner", "registration", "other2", "city", "state", "road", "mile_marker", "origin", "destination", "other3", "other4", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-10-22 04:08:35', '2013-10-22 04:08:35', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "databases" ("last_name", "first_name", "dob", "address", "ssn", "fbin", "picture", "other1", "make", "model", "year", "owner", "registration", "other2", "city", "state", "road", "mile_marker", "origin", "destination", "other3", "other4", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2013-10-22 04:08:35', '2013-10-22 04:08:35', 298486374)
+  [1m[36m (55.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mDatabase Load (0.6ms)[0m  [1mSELECT "databases".* FROM "databases" WHERE "databases"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "databases" 
+Processing by DatabasesController#create as HTML
+  Parameters: {"database"=>{"address"=>"MyString", "city"=>"MyString", "destination"=>"MyString", "dob"=>"MyString", "fbin"=>"MyString", "first_name"=>"MyString", "last_name"=>"MyString", "make"=>"MyString", "mile_marker"=>"MyString", "model"=>"MyString", "origin"=>"MyString", "other1"=>"MyString", "other2"=>"MyString", "other3"=>"MyString", "other4"=>"MyString", "owner"=>"MyString", "picture"=>"MyString", "registration"=>"MyString", "road"=>"MyString", "ssn"=>"MyString", "state"=>"MyString", "year"=>"MyString"}}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "databases" ("address", "city", "created_at", "destination", "dob", "fbin", "first_name", "last_name", "make", "mile_marker", "model", "origin", "other1", "other2", "other3", "other4", "owner", "picture", "registration", "road", "ssn", "state", "updated_at", "year") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["address", "MyString"], ["city", "MyString"], ["created_at", Tue, 22 Oct 2013 04:08:35 UTC +00:00], ["destination", "MyString"], ["dob", "MyString"], ["fbin", "MyString"], ["first_name", "MyString"], ["last_name", "MyString"], ["make", "MyString"], ["mile_marker", "MyString"], ["model", "MyString"], ["origin", "MyString"], ["other1", "MyString"], ["other2", "MyString"], ["other3", "MyString"], ["other4", "MyString"], ["owner", "MyString"], ["picture", "MyString"], ["registration", "MyString"], ["road", "MyString"], ["ssn", "MyString"], ["state", "MyString"], ["updated_at", Tue, 22 Oct 2013 04:08:35 UTC +00:00], ["year", "MyString"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/databases/980190963
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "databases" 
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mDatabase Load (0.2ms)[0m  [1mSELECT "databases".* FROM "databases" WHERE "databases"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "databases" 
+Processing by DatabasesController#destroy as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mDatabase Load (0.1ms)[0m  [1mSELECT "databases".* FROM "databases" WHERE "databases"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM "databases" WHERE "databases"."id" = ?[0m  [["id", 980190962]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/databases
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "databases" [0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mDatabase Load (0.1ms)[0m  SELECT "databases".* FROM "databases" WHERE "databases"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by DatabasesController#edit as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[36mDatabase Load (0.1ms)[0m  [1mSELECT "databases".* FROM "databases" WHERE "databases"."id" = ? LIMIT 1[0m  [["id", "980190962"]]
+  Rendered databases/_form.html.erb (13.1ms)
+Completed 200 OK in 47ms (Views: 46.3ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mDatabase Load (0.1ms)[0m  SELECT "databases".* FROM "databases" WHERE "databases"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by DatabasesController#index as HTML
+  [1m[36mDatabase Load (0.2ms)[0m  [1mSELECT "databases".* FROM "databases" [0m
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mDatabase Load (0.1ms)[0m  SELECT "databases".* FROM "databases" WHERE "databases"."id" = ? LIMIT 1  [["id", 980190962]]
+Processing by DatabasesController#new as HTML
+  Rendered databases/_form.html.erb (7.9ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mDatabase Load (0.1ms)[0m  [1mSELECT "databases".* FROM "databases" WHERE "databases"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by DatabasesController#show as HTML
+  Parameters: {"id"=>"980190962"}
+  [1m[35mDatabase Load (0.1ms)[0m  SELECT "databases".* FROM "databases" WHERE "databases"."id" = ? LIMIT 1  [["id", "980190962"]]
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mDatabase Load (0.1ms)[0m  [1mSELECT "databases".* FROM "databases" WHERE "databases"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+Processing by DatabasesController#update as HTML
+  Parameters: {"database"=>{"address"=>"MyString", "city"=>"MyString", "destination"=>"MyString", "dob"=>"MyString", "fbin"=>"MyString", "first_name"=>"MyString", "last_name"=>"MyString", "make"=>"MyString", "mile_marker"=>"MyString", "model"=>"MyString", "origin"=>"MyString", "other1"=>"MyString", "other2"=>"MyString", "other3"=>"MyString", "other4"=>"MyString", "owner"=>"MyString", "picture"=>"MyString", "registration"=>"MyString", "road"=>"MyString", "ssn"=>"MyString", "state"=>"MyString", "year"=>"MyString"}, "id"=>"980190962"}
+  [1m[35mDatabase Load (0.1ms)[0m  SELECT "databases".* FROM "databases" WHERE "databases"."id" = ? LIMIT 1  [["id", "980190962"]]
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/databases/980190962
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m

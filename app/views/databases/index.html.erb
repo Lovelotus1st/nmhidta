@@ -1,0 +1,73 @@
+<div id="database_list">
+<h1>Database</h1>
+
+<table border '1"'>
+  <tr>
+    <th>Last name</th>
+    <th>First name</th>
+    <th>Date_of_Birth</th>
+    <th>Address</th>
+    <th>Social_Security Number.</th>
+    <th>FBI No.</th>
+    <th>Picture</th>
+    <th>Other1</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Year</th>
+    <th>Owner</th>
+    <th>Registration</th>
+    <th>Other2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Road</th>
+    <th>Mile marker</th>
+    <th>Origin</th>
+    <th>Destination</th>
+    <th>Other3</th>
+    <th>Other4</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @databases.each do |database| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td><%= database.last_name %></td>
+    <td><%= database.first_name %></td>
+    <td><%= database.dob %></td>
+    <td><%= database.address %></td>
+    <td><%= database.ssn %></td>
+    <td><%= database.fbin %></td>
+    
+    <td>
+<%= image_tag(database.picture, :class => 'list_image') %>
+</td>
+    
+    <td><%= database.other1 %></td>
+    <td><%= database.make %></td>
+    <td><%= database.model %></td>
+    <td><%= database.year %></td>
+    <td><%= database.owner %></td>
+    <td><%= database.registration %></td>
+    <td><%= database.other2 %></td>
+    <td><%= database.city %></td>
+    <td><%= database.state %></td>
+    <td><%= database.road %></td>
+    <td><%= database.mile_marker %></td>
+    <td><%= database.origin %></td>
+    <td><%= database.destination %></td>
+    <td><%= database.other3 %></td>
+    <td><%= database.other4 %></td>
+    <td><%= link_to 'Show', database %></td>
+    <td><%= link_to 'Edit', edit_database_path(database) %></td>
+    <td><%= button_to 'Remove', database, method: :delete, data: { confirm: 'Want to remove from database?' } %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+
+<br />
+<%= link_to 'New Entry', new_database_path %>
+<%= button_to 'Home', home_path %>
+
+
