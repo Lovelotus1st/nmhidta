@@ -23,25 +23,9 @@
 	    </a></h1>
         <h3>------------</h3>
 
-      <div class="content">
-        	<h1>Welcome Message.</h1><br />
-
-
-
-</desidn/blockquote>
- <li>
- 
  <div id="user_nav">
   <% if current_user %>
-    Logged in as <%= current_user.email %>.
-    <%= link_to "Log out", log_out_path %>
-  <% else %>
-  
-    <%= link_to "Log in", log_in_path %>
-    
-     or 
-    
-    <%= link_to "Sign up", sign_up_path %>
+    Logged in as <%= current_user.email %>
   <% end %>
 </div>
 
@@ -49,8 +33,13 @@
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %>
 
+</br>
+      <div class="content">
+        	<h1>You can now access the database.</h1><br />
 
-</li>
+
+
+</desidn/blockquote>
 </design/blockquote>
 
 
@@ -61,7 +50,10 @@
 <li><a href="mailto:vimu@unm.edu?subject=Request
 &body=I want to know about :">Contact</a></li>
 
-
+</br>
+</br>
+</br>
+</br>
         <p>We can design this page better later. this text is just for our base </p> 
 
 
@@ -98,37 +90,3 @@
    </div>
 </body>
 </html>
-
-
-
-
-******below here is just for test purpose****
-
-<% if notice %>
-<p id="notice"><%= notice %></p>
-<% end %>
-
-<h1>------------</h1>
-<h1>Sample data:</h1>
-<h1>------------</h1>
-
-
-<div id="database_list">
-
-<table border '1"'>
-
-<% @databases.each do |database| %>
-   <tr> <th><%= database.last_name %>
-         <%= database.first_name %></th>
-        <td><%= database.dob %></td> 
-		<td><%= database.city %></span></td>
-<td><div id="home">
-    <%= image_tag(database.picture, :class => 'image1') %>
-    </div></td>
-    
-    	<td><%= link_to 'More Info', database %></td>
-  </tr>
-    
-</table>
-</div>
-<% end %>

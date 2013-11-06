@@ -14,33 +14,38 @@
     <div id="content">
     
     <div id="columnOnelogin">
+    <div class="content">
+        	<h1>Please login</h1><br />
 
 
-<h1>Log in</h1>
-<br /><br />
-<%= form_tag sessions_path do %>
-  <p>
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email, params[:email] %>
-  </p>
-  <br />
-  <p>
-    <%= label_tag :password %><br />
-    <%= password_field_tag :password %>
-  </p>
-  <br />
-  
-  <p class="button"><%= submit_tag "Log in" %></p>
+
+<div id="user_nav">
+<div id="user_nav_login">
+<% flash.each do |name, msg| %>
+<%= content_tag :div, msg, :id => "flash_#{name}" %>
 
 <% end %>
 
-<br />
-<br />
-Not registered ?  <%= link_to "Sign up", sign_up_path %>
+</div>
+
+
+<%= form_tag sessions_path do %>
+<p>
+<%= label_tag :email %><br />
+<%= text_field_tag :email, params[:email] %>
+</p>
+<p>
+<%= label_tag :password %><br />
+<%= password_field_tag :password %>
+</p>
+<p class="button"><%= submit_tag "Log in" %></p>
+<% end %>
+
+Already registered ?  <%= link_to "Sign Up", sign_up_path %>
+
 </div>	
     </div>
-
-    
+  </div>
 
 
 <div id="footer"><a href="http://www.nmhidta.org/contact.htm">contact us</a> or <a href="http://www.unm.edu">UNM Students</a></div>
@@ -48,3 +53,6 @@ Not registered ?  <%= link_to "Sign up", sign_up_path %>
    </div>
 </body>
 </html>
+
+
+

@@ -4,14 +4,14 @@ gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
- 
-gem 'sqlite3'
-gem 'pg'
+gem 'execjs'
 
+gem 'sqlite3'
+
+
+gem 'therubyracer', :platforms => :ruby
 
 gem "bcrypt-ruby", :require => "bcrypt"
-
-gem 'rails_12factor', group: :production
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -85,6 +85,21 @@ font-size:9px;
 	width: 435px;	
 }
 
+#user_nav_login
+{
+position:relative;
+left:0px;
+top:0px;
+color:#FF0000;
+text-align:right;
+width:595px;
+font-size:15px;
+font-weight:bold;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+
+
 #columnOnelogin
 {
 	float: left;

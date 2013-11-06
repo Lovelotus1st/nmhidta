@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Nmhidta::Application.config.secret_token = '8e86afd489fd80f09178a59ce88247a27145b39e39269835308c5658693961fa3521599e8af8a87c55a41a0750ecbd439514a6783ff562fc47b63f29573c842d'
+Oct31::Application.config.secret_token = '53f6bba2deb1715b4fe788552cde25bfcf1b20db3f7f0cc2a1c1d06061431df3b9773f571859ffb951b0b9c9c76eb61786f7839e995ce60265bb585aa8b217a6'
