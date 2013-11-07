@@ -12,20 +12,26 @@
            
             </div>
     <div id="content">
+    	   
+    <h1><a href="#">
+	     ::::
+	     <%= link_to 'Home', homepage_path %> :::::
+	     <%= link_to 'About us',about_path %> :::::
+	     <%= link_to 'FAQs', faqs_path %> :::::
+	     <%= link_to 'Resources', resources_path %>
+	     :::::
+	    </a>
+	</h1>
+
     
+    
+    
+  </br>  
     <div id="columnOne">
-	    <h1><a href="#">Menu bar or not here ----
-	    
-	      <%= button_to 'Home', homepage_path %>
-	      
-	    
-	    
-	    </a></h1>
-        <h3>------------</h3>
 
  <div id="user_nav">
   <% if current_user %>
-    Logged in as <%= current_user.email %>
+    Hi, <%= current_user.email %>
   <% end %>
 </div>
 
