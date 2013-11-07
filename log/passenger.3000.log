@@ -53,3 +53,23 @@ PassengerHelperAgent(34417,0x10391a000) malloc: *** set a breakpoint in malloc_e
 [ 2013-11-06 00:46:20.1536 34202/0x1039ca000 Pool2/Spawner.h:160 ]: [App 34682 stderr]         Called from: /Users/Vimu/.rvm/gems/ruby-1.9.3-p194@global/gems/actionpack-3.2.8/lib/action_dispatch/middleware/session/abstract_store.rb:28:in `initialize'.
 [ 2013-11-06 00:46:20.1537 34202/0x1039ca000 Pool2/Spawner.h:160 ]: [App 34682 stderr] 
 [ 2013-11-06 00:46:20.3503 34202/0x1039a1000 Pool2/SmartSpawner.h:305 ]: Preloader for /Users/Vimu/Desktop/nmhidta started on PID 34682, listening on unix:/tmp/passenger.1.0.34199/generation-0/backends/preloader.34682
+[ 2013-11-06 19:18:15.8777 51031/0x7fff7bdac310 agents/Watchdog/Main.cpp:574 ]: Options: { 'analytics_log_user' => 'Vimu', 'cleanup_pidfiles' => 'L3Zhci9mb2xkZXJzL2x3L2Yza3Z2dHkxMTRnMnd0OHAxN19oMmJqbTAwMDBnbi9UL3Bhc3Nlbmdlci1zdGFuZGFsb25lLjE4YjRmam4vdGVtcF9kaXJfdG91Y2hlci5waWQ=', 'default_group' => 'staff', 'default_python' => 'python', 'default_ruby' => '/Users/Vimu/.rvm/wrappers/ruby-1.9.3-p194@global/ruby', 'default_user' => 'Vimu', 'log_level' => '0', 'max_instances_per_app' => '0', 'max_pool_size' => '6', 'passenger_root' => '/var/folders/lw/f3kvvty114g2wt8p17_h2bjm0000gn/T/passenger-standalone.18b4fjn/locations.ini', 'pool_idle_time' => '300', 'prestart_urls' => 'aHR0cDovLzAuMC4wLjA6MzAwMAA=', 'temp_dir' => '/tmp', 'union_station_gateway_address' => 'gateway.unionstationapp.com', 'union_station_gateway_port' => '443', 'user_switching' => 'false', 'web_server_pid' => '51030', 'web_server_type' => 'nginx', 'web_server_worker_gid' => '-1', 'web_server_worker_uid' => '-1' }
+[ 2013-11-06 19:18:16.0496 51033/0x7fff7bdac310 agents/HelperAgent/Main.cpp:619 ]: PassengerHelperAgent online, listening at unix:/tmp/passenger.1.0.51030/generation-0/request
+PassengerWatchdog(51036,0x7fff7bdac310) malloc: *** mach_vm_map(size=8388608) failed (error code=268435459)
+PassengerWatchdog(51036,0x7fff7bdac310) malloc: *** error: can't allocate region securely
+PassengerWatchdog(51036,0x7fff7bdac310) malloc: *** set a breakpoint in malloc_error_break to debug
+[ 2013-11-06 19:18:16.1631 51035/0x7fff7bdac310 agents/LoggingAgent/Main.cpp:318 ]: PassengerLoggingAgent online, listening at unix:/tmp/passenger.1.0.51030/generation-0/logging
+[ 2013-11-06 19:18:16.1634 51031/0x7fff7bdac310 agents/Watchdog/Main.cpp:761 ]: All Phusion Passenger agents started!
+[ 2013-11-06 19:18:18.7504 51033/0x10f60e000 Pool2/Spawner.h:796 ]: [App 51048 stdout] 
+[ 2013-11-06 19:18:20.7888 51033/0x10f59b000 Pool2/Spawner.h:160 ]: [App 51048 stderr]         SECURITY WARNING: No secret option provided to Rack::Session::Cookie.
+[ 2013-11-06 19:18:20.7889 51033/0x10f59b000 Pool2/Spawner.h:160 ]: [App 51048 stderr]         This poses a security threat. It is strongly recommended that you
+[ 2013-11-06 19:18:20.7889 51033/0x10f59b000 Pool2/Spawner.h:160 ]: [App 51048 stderr]         provide a secret to prevent exploits that may be possible from crafted
+[ 2013-11-06 19:18:20.7889 51033/0x10f59b000 Pool2/Spawner.h:160 ]: [App 51048 stderr]         cookies. This will not be supported in future versions of Rack, and
+[ 2013-11-06 19:18:20.7889 51033/0x10f59b000 Pool2/Spawner.h:160 ]: [App 51048 stderr]         future versions will even invalidate your existing user cookies.
+[ 2013-11-06 19:18:20.7889 51033/0x10f59b000 Pool2/Spawner.h:160 ]: [App 51048 stderr] 
+[ 2013-11-06 19:18:20.7889 51033/0x10f59b000 Pool2/Spawner.h:160 ]: [App 51048 stderr]         Called from: /Users/Vimu/.rvm/gems/ruby-1.9.3-p194@global/gems/actionpack-3.2.8/lib/action_dispatch/middleware/session/abstract_store.rb:28:in `initialize'.
+[ 2013-11-06 19:18:20.7890 51033/0x10f59b000 Pool2/Spawner.h:160 ]: [App 51048 stderr] 
+[ 2013-11-06 19:18:22.3584 51033/0x10f60e000 Pool2/SmartSpawner.h:305 ]: Preloader for /Users/Vimu/Desktop/nmhidta started on PID 51048, listening on unix:/tmp/passenger.1.0.51030/generation-0/backends/preloader.51048
+PassengerHelperAgent(51177,0x10f398000) malloc: *** mach_vm_map(size=8388608) failed (error code=268435459)
+PassengerHelperAgent(51177,0x10f398000) malloc: *** error: can't allocate region securely
+PassengerHelperAgent(51177,0x10f398000) malloc: *** set a breakpoint in malloc_error_break to debug
