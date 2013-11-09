@@ -1,58 +1,89 @@
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>NM High Intensity ...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>New Mexico High Intensity Drug Trafficking Area</title>
+<meta name="keywords" content="clean blog template, html css layout" />
+<meta name="description" content="Clean Blog Template is provided by templatemo.com" />
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<link href="s3slider.css" rel="stylesheet" type="text/css" />
+<!-- JavaScripts-->
+<script type="text/javascript" src="javascripts/jquery.js"></script>
+<script type="text/javascript" src="javascripts/s3Slider.js"></script>
+
 </head>
-
 <body>
-    <div id="main">
-          <div id="header">
-                <div id="headerTitle">NMHIDTA Database</div>
-        
-            <div id="headerSubText">New Mexico High.................</div>
-           
-            </div>
-    <div id="content">
-    	   
-    <h1><a href="#">
-	     ::::
-	     <%= link_to 'Home', homepage_path %> :::::
-	     <%= link_to 'About us',about_path %> :::::
-	     <%= link_to 'FAQs', faqs_path %> :::::
-	     <%= link_to 'Resources', resources_path %>
-	     :::::
-	    </a>
-	</h1>
 
-    
-    
-    
-  </br>  
-    <div id="columnOne">
+<div id="templatemo_wrapper">
 
- <div id="user_nav">
-  <% if current_user %>
-    Hi, <%= current_user.email %>
-  <% end %>
+<div id="templatemo_menu">
+
+<ul>
+<li><a href="#" class="current">Home</a></li>
+<li><a href="about.html">Search</a></li>
+<li><a href="contact.html">New Form</a></li>
+<li><a href="faqs.html">Support</a></li>
+</ul>
+
+</div> <!-- menu -->
+
+<div id="templatemo_left_column">
+
+<div id="templatemo_header">
+
+<div id="site_title">
+<h1><a href="#" target="_parent">NM<strong>HIDTA</strong><span>New Mexico High Intensity Drug Trafficking Area</span></a></h1>
+</div><!-- end of site_title -->
+
+</div> <!-- end of header -->
+
+<div id="templatemo_sidebar">
+
+<div id="templatemo_rss">
+
+<a href="#">Welcome <br /><span>to NMHIDTA database</span></a>
+
+</div>
+
+<h4>LINKS 1</h4>
+<ul class="templatemo_list">
+
+</ul>
+
+<div class="cleaner_h40"></div>
+
+<h4>Links 2</h4>
+<ul class="templatemo_list">
+
+</ul>
+
+</div> <!-- end of templatemo_sidebar -->
+
+</div> <!-- end of templatemo_left_column -->
+
+<div id="templatemo_right_column">
+
+<!------------------------------------------------------------------------->
+
+
+<div id="templatemo_main">
+<div id="user_nav">
+<% if current_user %>
+Hi, <%= current_user.email %>  <%= link_to "Log out", log_out_path %>
+<% end %>
 </div>
 
 <% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<%= content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %>
 
 </br>
-      <div class="content">
-        	<h1>You can now access the database.</h1><br />
-
-
-
-</desidn/blockquote>
-</design/blockquote>
-
-
+<div class="content">
+<h3>You can now access the database.</h3><br />
 
 <li><a href="mailto:vimu@unm.edu?subject=Permission for Database
 &body=Please send me a login info for our Database!">Request Access</a></li>
- <li><a href=/databases>Database</a></li>
+<li><a href=/databases>Database</a></li>
 <li><a href="mailto:vimu@unm.edu?subject=Request
 &body=I want to know about :">Contact</a></li>
 
@@ -60,39 +91,26 @@
 </br>
 </br>
 </br>
-        <p>We can design this page better later. this text is just for our base </p> 
+<p>We can design this page better later. this text is just for our base </p>
 
 
-<p></p>
+</div>
+</div>
+<!------------------------------------------------------------------------->
+<div class="cleaner"></div>
+</div>
+<!-- end of templatemo_main -->
+<div class="cleaner_h20"></div>
 
+<div id="templatemo_footer">
 
-</div>	
-    </div>
+Copyright © 2013 <a href="#">NMHIDTA</a> |
+<a href="http://nmhidta.org" target="_parent">Database</a> by <a href="http://www.unm.edu" target="_parent">Green team</a>
 
-    <div id="columnTwo">
-    <h2>Shortcuts</h2>
-    <div class="links">
-    <ul>
-		<li><%= link_to 'Home', homepage_path %></li>
-   		<li><a href="http://www.nmhidta.org">Contact</a></li>
-     
-    <h2>External Links</h2>
-    <div class="links">
-    <ul>
-		<li><a href="http://www.google.com">Google</a></li>
-   		<li><a href="http://www.yahoo.com">Yahoo</a></li>
-           </ul>
-    </div><br />
-    
-</p>
-    
-    
-    </div>
-    </div>
+</div>
 
+<div class="cleaner"></div>
+</div> <!-- end of warpper -->
 
-<div id="footer"><a href="http://www.nmhidta.org/contact.htm">contact us</a> or <a href="http://www.unm.edu">UNM Students</a></div>
-        
-   </div>
 </body>
 </html>
