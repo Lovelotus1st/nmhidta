@@ -7,7 +7,7 @@ gem 'rails', '3.2.8'
 gem 'execjs'
 
 gem 'sqlite3'
-
+#gem 'pg'
 
 gem 'therubyracer', :platforms => :ruby
 
