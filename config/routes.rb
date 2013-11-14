@@ -1,33 +1,21 @@
-Oct31::Application.routes.draw do
-  get "home/index" 
+Nmhidta::Application.routes.draw do
+
+get "pages/support"
+get "pages/search"
+
+get "home/index" 
 
   resources :databases
-
-  get "sessions/new"
-
-  get "users/new"
-
 
 get "log_out" => "sessions#destroy", :as => "log_out"
 get "log_in" => "sessions#new", :as => "log_in"
 get "sign_up" => "users#new", :as => "sign_up"
-get "homepage" => "home#index", :as => "homepage"
-
-get "pages/about" , :as => 'about'
-get "pages/help", :as => 'help'
-get "pages/faqs", :as => 'faqs'
-get "pages/resources", :as => 'resources'
-get "pages/blog_post", :as => 'blog'
-get "pages/contact", :as => 'contact'
-get "pages/about1", :as => 'about1'
-get "pages/index", :as => 'index'
-
-#root :to => 'home#index', :as => 'home'
+get "home" => "home#index", :as => "home"
+get "search" => "pages/search", :as => "search"
+get "support" => "pages/support", :as => "support"
 root :to => "sessions#new"
 resources :users
 resources :sessions
-resources :pages
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

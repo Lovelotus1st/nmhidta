@@ -11,94 +11,532 @@
     </div>
   <% end %>
 
+
+ <table border="2" bordercolor="#000000" style="background-color:#FFFFFF" width="100%" cellpadding="3" cellspacing="3" >
+	 <!-----------------First row of form---------Title------------------------> 
+	<tr>
+		<td style="text-align:center"> <h7> NM HIDTA ISC EVENT/SEIZURE REPORT</h7> <br/>
+ 			PLEASE E-MAIL TO NM INVESTIGATIVE SUPPORT CENTER<br/>
+ 						TELEPHONE: (575) 647-6900<br/>
+ 						nmisc@nmhidta.org  </td>
+	</tr>
+     <!-----------------Second row of form----------Seizing stuff-----------------------> 
+	<tr>
+		<td> <h7><%= f.label :seizing_taskforce %></h7>: <%= f.text_field :seizing_taskforce,:size => 43 %>
+		     <h7><%= f.label :investigating_agency %></h7>: <%= f.text_field :investigating_agency,:size => 33 %></br>
+		     <h8><%= f.label :agency_case %></h8> #: <%= f.text_field :agency_case,:size => 25 %>
+		 	 <h8><%= f.label :cjis %> #: <%= f.text_field :cjis,:size => 21 %></h8>
+ 			 <h7><%= f.label :hidta_initiative %>: <%= f.text_field :hidta_initiative,:size => 33 %></h7>
+		     <h8><%= f.label :date_of_seizure%>: <%= f.text_field :date_of_seizure,:size => 22   %></h8>
+			 <h8><%= f.label :time %> :  <%= f.text_field :time,:size => 21 %></h8>
+			 <h8><%= f.label :day_of_the_week %>: <%= f.text_field :day_of_the_week,:size => 33 %></h8></br>
+			 </br>
+			 <h8><%= f.label :type_of_event %></h8> <%= f.select :type_of_event, ["traffic stop","buy/bust","buy/walk", "check point"] %>
+			 <h8><%= f.label :dhe_operation %></h8> <%= radio_button_tag(:she_operation, "Yes") %> Yes
+													  <%= radio_button_tag(:she_operation, "No") %> No	
+		</td>   
+	</tr>
+<!-----------------Third row of form-----------Location info---------------------->
+	<tr>
+		<td><div class="field">
+		<h7>Location:</h7></br>
+    <h8><%= f.label :Road%>/highway:</h8> <%= f.text_field :Road,:size => 22 %>
+    <h8><%= f.label :mile_marker %></h8>: <%= f.text_field :mile_marker,:size => 22 %>
+    <h8><%= f.label :direction_of_travel %></h8>: <%= f.text_field :direction,:size => 22 %>
+    <h8><%= f.label :street_address %></h8><%= f.text_field :street_address,:size => 22 %>
+    <h8><%= f.label :city %></h8> <%= f.text_field :city,:size => 22 %>
+    <h8><%= f.label :country %></h8><%= f.text_field :country,:size => 22 %>
+    <h8><%= f.label :state %></h8> <%= f.text_field :state,:size => 22 %>
+	<h8><%= f.label :zip %></h8><%= f.text_field :zip,:size => 22 %>       
+	
+	
+	 </td>
+
+	</tr>
+	     <!-----------------Fourth row of form--------------------------------->
+	<tr>
+		<td>
+		
+		
+		
+		
+<table border="1" cellpadding="0" cellspacing="0" style="width:100%;" width="475">
+			<tbody>
+				<tr>
+					<td colspan="8" style="width:633px;height:9px;">
+						<h7>SEIZURE:</h7>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:180px;height:9px;">
+						<h7>
+							TYPE OF DRUG(S):</h7>
+					</td>
+					<td colspan="2" style="width:181px;height:9px;">
+						<%= f.text_field :drug1 %>
+					</td>
+					<td colspan="3" style="width:181px;height:9px;">
+						<%= f.text_field :drug2 %>
+					</td>
+					<td colspan="2" style="width:181px;height:9px;">
+						<%= f.text_field :drug3 %>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:180px;height:18px;">
+						</br><h7>AMOUNT(S):</h7>
+					</td>
+					<td style="width:90px;height:18px;">
+						</br><%= f.text_field :drug1_amount,:size => 12 %>
+					</td>
+					<td style="width:90px;height:18px;">
+						Purchase Price</br>$<%= f.text_field :rice1,:size => 10 %>
+					</td>
+					<td colspan="2" style="width:90px;height:18px;">
+						</br><%= f.text_field :drug2_amount,:size => 12 %>
+					</td>
+					<td style="width:180px;height:18px;">
+						Purchase Price</br>$<%= f.text_field :price2,:size => 10 %>
+					</td>
+					<td style="width:90px;height:18px;">
+						</br><%= f.text_field :drug3_amount,:size => 12 %>
+					</td>
+					<td style="width:91px;height:18px;">
+						Purchase Price</br>$<%= f.text_field :price3,:size => 10 %>
+					</td>
+				</tr>
+				<tr>
+					<td style="width:180px;height:10px;">
+						<h7>CURRENCY:</h7>
+					</td>
+					<td style="width:90px;height:10px;">
+						<p>
+							$</p>
+					</td>
+					<td colspan="6" style="width:453px;height:10px;">
+						<p>
+							13</p>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="4" style="width:316px;height:10px;">
+						<h7>ORIGINATION POINT:</h7>
+					</td>
+					<td colspan="4" style="width:318px;height:10px;">
+						<h7>DESTINATION POINT:</h7>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	
+		</td>
+	</tr>
+	
+		     <!-----------------Fifth row of form-----------Subjects---------------------->
+	<tr>
+		<td>
+		
+<h7>subjects:</h7>
+</br>		
+<h8><%= f.label :Name %>:</h8><%= f.text_field :name1,:size => 25 %>
+<h8><%= f.label :dob %>:</h8><%= f.text_field :dob1,:size => 15 %>
+<h8><%= f.label :ssn %>:</h8><%= f.text_field :ssn1,:size => 15 %>
+<h8><%= f.label :oln %>:</h8><%= f.text_field :oln1,:size => 11 %>
+<h8><%= f.label :gender %>:</h8> <%= radio_button_tag(:gender1, "Male") %> Male
+							  <%= radio_button_tag(:gender1, "Female") %> Female</br>
+<h8><%= f.label :address %>:</h8><%= f.text_field :address1,:size => 25 %>
+<h8><%= f.label :city %>:</h8><%= f.text_field :city1,:size => 13 %>
+<h8><%= f.label :state %>:</h8><%= f.text_field :state1,:size => 10 %>
+<h8><%= f.label :zip %>:</h8><%= f.text_field :zip1,:size => 10 %>
+<h8><%= f.label :Person %>:</h8> <%= radio_button_tag(:subject1, "Male") %> Driver
+							  <%= radio_button_tag(:subject1, "Female") %> Passenger</br>
+<h8><%= f.label :misc %>:</h8><%= f.text_field :misc1,:size => 22 %>
+<h8><%= f.label :citizenship %>:</h8><%= f.text_field :citizenship1 %>
+</br>
+</br>
+<h8><%= f.label :Name %>:</h8><%= f.text_field :name2,:size => 25 %>
+<h8><%= f.label :dob %>:</h8><%= f.text_field :dob2,:size => 15 %>
+<h8><%= f.label :ssn %>:</h8><%= f.text_field :ssn2,:size => 15 %>
+<h8><%= f.label :oln %>:</h8><%= f.text_field :oln2,:size => 11 %>
+<h8><%= f.label :gender %>:</h8> <%= radio_button_tag(:gender2, "Male") %> Male
+							  <%= radio_button_tag(:gender2, "Female") %> Female</br>
+<h8><%= f.label :address %>:</h8><%= f.text_field :address2,:size => 25 %>
+<h8><%= f.label :city %>:</h8><%= f.text_field :city2,:size => 13 %>
+<h8><%= f.label :state %>:</h8><%= f.text_field :state2,:size => 10 %>
+<h8><%= f.label :zip %>:</h8><%= f.text_field :zip2,:size => 10 %>
+<h8><%= f.label :Person %>:</h8> <%= radio_button_tag(:subject2, "Male") %> Driver
+							  <%= radio_button_tag(:subject2, "Female") %> Passenger</br>
+<h8><%= f.label :misc %>:</h8><%= f.text_field :misc2,:size => 22 %>
+<h8><%= f.label :citizenship %>:</h8><%= f.text_field :citizenship2 %>		
+		
+		</td>
+	</tr>
+	<tr>
+		<td><h7>VEHICLE(S):</h7>
+		Sooooo tired next day :(
+		</td>
+	</tr>
+	<tr>
+		<td><h7>TELEPHONE DATA OBTAINED: TELEPHONE </h7></td>
+	</tr>
+	<tr>
+		<td><h7>NARRATIVE: </h7></td>
+	</tr>
+	<tr>
+		<td><h7>
+ADDITIONAL FACTORS</h7></td>
+	</tr>
+	<tr>
+		<td><h7>VERY OFTEN BASIC INFORMATION FROM YOUR SEIZURE CAN BE HELPFUL TO OTHER JURISDICTIONS. DOES THE NM INVESTIGATIVE SUPPORT CENTER HAVE YOUR PERMISSION TO DISSEMINATE BASIC INFORMATION ON THIS CASE AS APPLICABLE?</h7></td>
+	</tr>
+</table>
+
+
+ <!-----------------
   <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
+    <%= f.label :seizing_taskforce %><br />
+    <%= f.text_field :seizing_taskforce %>
   </div>
   <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name %>
+    <%= f.label :investigating_agency %><br />
+    <%= f.text_field :investigating_agency %>
   </div>
   <div class="field">
-    <%= f.label :dob %><br />
-    <%= f.text_field :dob %>
+    <%= f.label :agency_case %><br />
+    <%= f.text_field :agency_case %>
   </div>
   <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_field :address %>
+    <%= f.label :cjis %><br />
+    <%= f.text_field :cjis %>
   </div>
   <div class="field">
-    <%= f.label :ssn %><br />
-    <%= f.text_field :ssn %>
+    <%= f.label :hidta_initiative %><br />
+    <%= f.text_field :hidta_initiative %>
   </div>
   <div class="field">
-    <%= f.label :fbin %><br />
-    <%= f.text_field :fbin %>
+    <%= f.label :date_of_seizure %><br />
+    <%= f.text_field :date_of_seizure %>
   </div>
   <div class="field">
-    <%= f.label :picture %><br />
-    <%= f.text_field :picture %>
+    <%= f.label :time %><br />
+    <%= f.text_field :time %>
   </div>
   <div class="field">
-    <%= f.label :other1 %><br />
-    <%= f.text_field :other1 %>
+    <%= f.label :day_of_the_week %><br />
+    <%= f.text_field :day_of_the_week %>
   </div>
   <div class="field">
-    <%= f.label :make %><br />
-    <%= f.text_field :make %>
+    <%= f.label :type_of_event %><br />
+    <%= f.text_field :type_of_event %>
   </div>
   <div class="field">
-    <%= f.label :model %><br />
-    <%= f.text_field :model %>
+    <%= f.label :she_operation %><br />
+    <%= f.text_field :she_operation %>
   </div>
   <div class="field">
-    <%= f.label :year %><br />
-    <%= f.text_field :year %>
-  </div>
-  <div class="field">
-    <%= f.label :owner %><br />
-    <%= f.text_field :owner %>
-  </div>
-  <div class="field">
-    <%= f.label :registration %><br />
-    <%= f.text_field :registration %>
-  </div>
-  <div class="field">
-    <%= f.label :other2 %><br />
-    <%= f.text_field :other2 %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :road %><br />
-    <%= f.text_field :road %>
+    <%= f.label :Road %><br />
+    <%= f.text_field :Road %>
   </div>
   <div class="field">
     <%= f.label :mile_marker %><br />
     <%= f.text_field :mile_marker %>
   </div>
   <div class="field">
-    <%= f.label :origin %><br />
-    <%= f.text_field :origin %>
+    <%= f.label :direction %><br />
+    <%= f.text_field :direction %>
   </div>
   <div class="field">
-    <%= f.label :destination %><br />
-    <%= f.text_field :destination %>
+    <%= f.label :street_address %><br />
+    <%= f.text_field :street_address %>
   </div>
   <div class="field">
-    <%= f.label :other3 %><br />
-    <%= f.text_field :other3 %>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
   </div>
   <div class="field">
-    <%= f.label :other4 %><br />
-    <%= f.text_field :other4 %>
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
   </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.label :drug1 %><br />
+    <%= f.text_field :drug1 %>
+  </div>
+  <div class="field">
+    <%= f.label :drug1_amount %><br />
+    <%= f.text_field :drug1_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :rice1 %><br />
+    <%= f.text_field :rice1 %>
+  </div>
+  <div class="field">
+    <%= f.label :drug2 %><br />
+    <%= f.text_field :drug2 %>
+  </div>
+  <div class="field">
+    <%= f.label :drug2_amount %><br />
+    <%= f.text_field :drug2_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :price2 %><br />
+    <%= f.text_field :price2 %>
+  </div>
+  <div class="field">
+    <%= f.label :drug3 %><br />
+    <%= f.text_field :drug3 %>
+  </div>
+  <div class="field">
+    <%= f.label :drug3_amount %><br />
+    <%= f.text_field :drug3_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :price3 %><br />
+    <%= f.text_field :price3 %>
+  </div>
+  <div class="field">
+    <%= f.label :name1 %><br />
+    <%= f.text_field :name1 %>
+  </div>
+  <div class="field">
+    <%= f.label :dob1 %><br />
+    <%= f.text_field :dob1 %>
+  </div>
+  <div class="field">
+    <%= f.label :ssn1 %><br />
+    <%= f.text_field :ssn1 %>
+  </div>
+  <div class="field">
+    <%= f.label :oln1 %><br />
+    <%= f.text_field :oln1 %>
+  </div>
+  <div class="field">
+    <%= f.label :gender1 %><br />
+    <%= f.text_field :gender1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address1 %><br />
+    <%= f.text_field :address1 %>
+  </div>
+  <div class="field">
+    <%= f.label :city1 %><br />
+    <%= f.text_field :city1 %>
+  </div>
+  <div class="field">
+    <%= f.label :state1 %><br />
+    <%= f.text_field :state1 %>
+  </div>
+  <div class="field">
+    <%= f.label :zip1 %><br />
+    <%= f.text_field :zip1 %>
+  </div>
+  <div class="field">
+    <%= f.label :subject1 %><br />
+    <%= f.text_field :subject1 %>
+  </div>
+  <div class="field">
+    <%= f.label :misc1 %><br />
+    <%= f.text_field :misc1 %>
+  </div>
+  <div class="field">
+    <%= f.label :citizenship1 %><br />
+    <%= f.text_field :citizenship1 %>
+  </div>
+  <div class="field">
+    <%= f.label :picture1 %><br />
+    <%= f.text_field :picture1 %>
+  </div>
+  <div class="field">
+    <%= f.label :tel_no1 %><br />
+    <%= f.text_field :tel_no1 %>
+  </div>
+  <div class="field">
+    <%= f.label :tel_data2 %><br />
+    <%= f.text_field :tel_data2 %>
+  </div>
+  <div class="field">
+    <%= f.label :name2 %><br />
+    <%= f.text_field :name2 %>
+  </div>
+  <div class="field">
+    <%= f.label :dob2 %><br />
+    <%= f.text_field :dob2 %>
+  </div>
+  <div class="field">
+    <%= f.label :ssn2 %><br />
+    <%= f.text_field :ssn2 %>
+  </div>
+  <div class="field">
+    <%= f.label :oln2 %><br />
+    <%= f.text_field :oln2 %>
+  </div>
+  <div class="field">
+    <%= f.label :gender2 %><br />
+    <%= f.text_field :gender2 %>
+  </div>
+  <div class="field">
+    <%= f.label :address2 %><br />
+    <%= f.text_field :address2 %>
+  </div>
+  <div class="field">
+    <%= f.label :city2 %><br />
+    <%= f.text_field :city2 %>
+  </div>
+  <div class="field">
+    <%= f.label :state2 %><br />
+    <%= f.text_field :state2 %>
+  </div>
+  <div class="field">
+    <%= f.label :zip2 %><br />
+    <%= f.text_field :zip2 %>
+  </div>
+  <div class="field">
+    <%= f.label :subject2 %><br />
+    <%= f.text_field :subject2 %>
+  </div>
+  <div class="field">
+    <%= f.label :misc2 %><br />
+    <%= f.text_field :misc2 %>
+  </div>
+  <div class="field">
+    <%= f.label :citizenship2 %><br />
+    <%= f.text_field :citizenship2 %>
+  </div>
+  <div class="field">
+    <%= f.label :picture2 %><br />
+    <%= f.text_field :picture2 %>
+  </div>
+  <div class="field">
+    <%= f.label :tel_no2 %><br />
+    <%= f.text_field :tel_no2 %>
+  </div>
+  <div class="field">
+    <%= f.label :tel_data2 %><br />
+    <%= f.text_field :tel_data2 %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle_seized %><br />
+    <%= f.text_field :vehicle_seized %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle1make %><br />
+    <%= f.text_field :vehicle1make %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle1model %><br />
+    <%= f.text_field :vehicle1model %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle1year %><br />
+    <%= f.text_field :vehicle1year %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle1lic_place %><br />
+    <%= f.text_field :vehicle1lic_place %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle1_state %><br />
+    <%= f.text_field :vehicle1_state %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle1_color %><br />
+    <%= f.text_field :vehicle1_color %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle1_reg_owner %><br />
+    <%= f.text_field :vehicle1_reg_owner %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle2make %><br />
+    <%= f.text_field :vehicle2make %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle2model2 %><br />
+    <%= f.text_field :vehicle2model2 %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle2year %><br />
+    <%= f.text_field :vehicle2year %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle2lic_place %><br />
+    <%= f.text_field :vehicle2lic_place %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle2_state %><br />
+    <%= f.text_field :vehicle2_state %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle2_color %><br />
+    <%= f.text_field :vehicle2_color %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle2_reg_owner %><br />
+    <%= f.text_field :vehicle2_reg_owner %>
+  </div>
+  <div class="field">
+    <%= f.label :linked_to %><br />
+    <%= f.text_field :linked_to %>
+  </div>
+  <div class="field">
+    <%= f.label :name_of_organization %><br />
+    <%= f.text_field :name_of_organization %>
+  </div>
+  <div class="field">
+    <%= f.label :agent_contact %><br />
+    <%= f.text_field :agent_contact %>
+  </div>
+  <div class="field">
+    <%= f.label :agent_tel %><br />
+    <%= f.text_field :agent_tel %>
+  </div>
+  <div class="field">
+    <%= f.label :analy_support %><br />
+    <%= f.text_field :analy_support %>
+  </div>
+  <div class="field">
+    <%= f.label :support_method %><br />
+    <%= f.text_field :support_method %>
+  </div>
+  <div class="field">
+    <%= f.label :conceal_method %><br />
+    <%= f.text_field :conceal_method %>
+  </div>
+  <div class="field">
+    <%= f.label :false_compart %><br />
+    <%= f.text_field :false_compart %>
+  </div>
+  <div class="field">
+    <%= f.label :comp_location %><br />
+    <%= f.text_field :comp_location %>
+  </div>
+  <div class="field">
+    <%= f.label :if_cargo %><br />
+    <%= f.text_field :if_cargo %>
+  </div>
+  <div class="field">
+    <%= f.label :k9 %><br />
+    <%= f.text_field :k9 %>
+  </div>
+  <div class="field">
+    <%= f.label :lab_inhouse %><br />
+    <%= f.text_field :lab_inhouse %>
+  </div>
+  <div class="field">
+    <%= f.label :applicable %><br />
+    <%= f.text_field :applicable %>
+  </div>
+-------------------------------->
+
+</br>
   <div class="actions">
     <%= f.submit %>
   </div>

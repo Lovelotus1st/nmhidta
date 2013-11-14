@@ -1,6 +1,4 @@
 class PagesController < ApplicationController
-
-  def index
+  def search
   end
-
 end

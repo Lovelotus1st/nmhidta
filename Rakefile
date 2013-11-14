@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Oct31::Application.load_tasks
+Nmhidta::Application.load_tasks
