@@ -173,8 +173,29 @@
 		</td>
 	</tr>
 	<tr>
-		<td><h7>VEHICLE(S):</h7>
-		Sooooo tired next day :(
+		<td><h7>VEHICLE(S):
+    <%= f.label :were_vehicle_seized %>: <%= radio_button_tag(:vehicle_seized, "Yes") %> Yes
+										  <%= radio_button_tag(:vehicle_seized, "No") %> No
+		</h7></br>
+    <%= f.label :make %>: <%= f.text_field :vehicle1make,:size => 20  %>
+    <%= f.label :model %>: <%= f.text_field :vehicle1model,:size => 20  %>
+    <%= f.label :year %>: <%= f.text_field :vehicle1year,:size => 11  %>
+    <%= f.label :license_place %>: <%= f.text_field :vehicle1lic_place,:size => 20  %></br>
+    <%= f.label :state %>: <%= f.text_field :vehicle1_state,:size => 20  %>
+    <%= f.label :color %>: <%= f.text_field :vehicle1_color,:size => 20  %>
+    <%= f.label :registered_owner %>: <%= f.text_field :vehicle1_reg_owner,:size => 20  %></br>
+    </br>
+    
+    <%= f.label :make %>: <%= f.text_field :vehicle2make,:size => 20  %>
+    <%= f.label :model %>: <%= f.text_field :vehicle2model2,:size => 20  %>
+    <%= f.label :year %>: <%= f.text_field :vehicle1year,:size => 11  %>
+    <%= f.label :license_place %>: <%= f.text_field :vehicle2lic_place,:size => 20  %></br>
+    <%= f.label :state %>: <%= f.text_field :vehicle2_state,:size => 20  %>
+    <%= f.label :color %>: <%= f.text_field :vehicle2_color,:size => 20  %>
+    <%= f.label :registered_owner %>: <%= f.text_field :vehicle2_reg_owner,:size => 20  %>
+  
+  
+  
 		</td>
 	</tr>
 	<tr>
