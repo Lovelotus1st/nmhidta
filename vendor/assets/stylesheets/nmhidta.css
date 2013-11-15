@@ -1,0 +1,29 @@
+#home .image1 {
+  width:        60px;
+  height:       70px;
+}
+
+
+
+#database_list .list_image {
+  width:        60px;
+  height:       70px;
+}
+
+
+#database_list .list_actions {
+  font-size:    x-small;
+  text-align:   right;
+  padding-left: 1em;
+}
+
+#database_list .list_line_even {
+  background:   #F5DA81;
+}
+
+#database_list .list_line_odd {
+  background:   #A4A4A4;
+}
+
+
+
