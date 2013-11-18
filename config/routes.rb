@@ -4,14 +4,15 @@ get "pages/support"
 get "pages/search"
 
 get "home/index" 
-
+get "databases/search"
   resources :databases
 
 get "log_out" => "sessions#destroy", :as => "log_out"
 get "log_in" => "sessions#new", :as => "log_in"
 get "sign_up" => "users#new", :as => "sign_up"
 get "home" => "home#index", :as => "home"
-get "search" => "pages/search", :as => "search"
+#get "search" => "pages/search", :as => "search"
+get "search" => "databases#search", :as => "search"
 get "support" => "pages/support", :as => "support"
 root :to => "sessions#new"
 resources :users

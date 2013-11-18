@@ -62,7 +62,13 @@
         <div id="templatemo_main">
         <h2>Search Database</h2>
         Enter as much information as possible.
-        
+               
+<% form_tag databases_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>       
         
         
         </div>

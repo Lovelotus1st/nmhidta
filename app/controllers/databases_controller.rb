@@ -3,13 +3,14 @@ class DatabasesController < ApplicationController
   # GET /databases.json
   def index
     @databases = Database.all
-
+    @databases = Database.search(params[:search])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @databases }
+      
     end
   end
-
+  
   # GET /databases/1
   # GET /databases/1.json
   def show

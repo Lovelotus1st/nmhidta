@@ -1,4 +1,4 @@
-<%= form_for(@database) do |f| %>
+<%= simple_form_for(@database) do |f| %>
   <% if @database.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@database.errors.count, "error") %> prohibited this database from being saved:</h2>
