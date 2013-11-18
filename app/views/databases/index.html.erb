@@ -1,5 +1,12 @@
 <h7>Databases</h7>
 
+<%= form_tag databases_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+
+
+
 <table border "1">
   <tr>
     <th>Seizing taskforce</th>
@@ -11,7 +18,7 @@
     <th>Time</th>
     <th>Day of the week</th>
     <th>Type of event</th>
-    <th>She operation</th>
+    <th>DHE operation</th>
     <th>Road</th>
     <th>Mile marker</th>
     <th>Direction</th>
@@ -193,7 +200,9 @@
     <td><%= database.extra12 %></td>
     <td><%= link_to 'Show', database %></td>
     <td><%= link_to 'Edit', edit_database_path(database) %></td>
-    <td><%= link_to 'Destroy', database, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= button_to 'Remove', database, method: :delete, data: { confirm: 'Want to remove from database?' } %></td>
+
+                          
   </tr>
 <% end %>
 </table>

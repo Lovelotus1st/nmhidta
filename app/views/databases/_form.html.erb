@@ -1,4 +1,4 @@
-<%= form_for(@database) do |f| %>
+<%= simple_form_for(@database) do |f| %>
   <% if @database.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@database.errors.count, "error") %> prohibited this database from being saved:</h2>
@@ -12,7 +12,7 @@
   <% end %>
 
 
- <table border="2" bordercolor="#000000" style="background-color:#FFFFFF" width="100%" cellpadding="3" cellspacing="3" >
+ <table border="2" bordercolor="#000000" style="background-color:#DCDCDC" width="100%" cellpadding="3" cellspacing="3" >
 	 <!-----------------First row of form---------Title------------------------> 
 	<tr>
 		<td style="text-align:center"> <h7> NM HIDTA ISC EVENT/SEIZURE REPORT</h7> <br/>
@@ -22,7 +22,8 @@
 	</tr>
      <!-----------------Second row of form----------Seizing stuff-----------------------> 
 	<tr>
-		<td> <h7><%= f.label :seizing_taskforce %></h7>: <%= f.text_field :seizing_taskforce,:size => 43 %>
+		<td><div id="form_box">
+			 <h7><%= f.label :seizing_taskforce %></h7>: <%= f.text_field :seizing_taskforce,:size => 43 %>
 		     <h7><%= f.label :investigating_agency %></h7>: <%= f.text_field :investigating_agency,:size => 33 %></br>
 		     <h8><%= f.label :agency_case %></h8> #: <%= f.text_field :agency_case,:size => 25 %>
 		 	 <h8><%= f.label :cjis %> #: <%= f.text_field :cjis,:size => 21 %></h8>
@@ -30,27 +31,26 @@
 		     <h8><%= f.label :date_of_seizure%>: <%= f.text_field :date_of_seizure,:size => 22   %></h8>
 			 <h8><%= f.label :time %> :  <%= f.text_field :time,:size => 21 %></h8>
 			 <h8><%= f.label :day_of_the_week %>: <%= f.text_field :day_of_the_week,:size => 33 %></h8></br>
-			 </br>
 			 <h8><%= f.label :type_of_event %></h8> <%= f.select :type_of_event, ["traffic stop","buy/bust","buy/walk", "check point"] %>
 			 <h8><%= f.label :dhe_operation %></h8> <%= radio_button_tag(:she_operation, "Yes") %> Yes
 													  <%= radio_button_tag(:she_operation, "No") %> No	
-		</td>   
+	</div>	</td>   
 	</tr>
 <!-----------------Third row of form-----------Location info---------------------->
 	<tr>
 		<td><div class="field">
 		<h7>Location:</h7></br>
+<div id="form_box">		
     <h8><%= f.label :Road%>/highway:</h8> <%= f.text_field :Road,:size => 22 %>
-    <h8><%= f.label :mile_marker %></h8>: <%= f.text_field :mile_marker,:size => 22 %>
+    <h8><%= f.label :mile_marker %></h8>: <%= f.text_field :mile_marker,:size => 15 %>
     <h8><%= f.label :direction_of_travel %></h8>: <%= f.text_field :direction,:size => 22 %>
-    <h8><%= f.label :street_address %></h8><%= f.text_field :street_address,:size => 22 %>
-    <h8><%= f.label :city %></h8> <%= f.text_field :city,:size => 22 %>
-    <h8><%= f.label :country %></h8><%= f.text_field :country,:size => 22 %>
-    <h8><%= f.label :state %></h8> <%= f.text_field :state,:size => 22 %>
-	<h8><%= f.label :zip %></h8><%= f.text_field :zip,:size => 22 %>       
-	
-	
-	 </td>
+    <h8><%= f.label :street_address %></h8>: <%= f.text_field :street_address,:size => 45 %>
+    <h8><%= f.label :city %></h8>: <%= f.text_field :city,:size => 22 %>
+    <h8><%= f.label :country %></h8>: <%= f.text_field :country,:size => 22 %>
+    <h8><%= f.label :state %></h8>: <%= select_tag :state, options_for_select(us_states) %>
+	<h8><%= f.label :zip %></h8>: <%= f.text_field :zip,:size => 22 %>       
+		
+</div>	 </td>
 
 	</tr>
 	     <!-----------------Fourth row of form--------------------------------->
@@ -87,22 +87,22 @@
 						</br><h7>AMOUNT(S):</h7>
 					</td>
 					<td style="width:90px;height:18px;">
-						</br><%= f.text_field :drug1_amount,:size => 12 %>
+						</br><%= f.text_field :drug1_amount,:size => 16 %>
 					</td>
 					<td style="width:90px;height:18px;">
-						Purchase Price</br>$<%= f.text_field :rice1,:size => 10 %>
+						Purchase Price</br> $ <%= f.text_field :rice1,:size => 10 %>
 					</td>
 					<td colspan="2" style="width:90px;height:18px;">
-						</br><%= f.text_field :drug2_amount,:size => 12 %>
-					</td>
-					<td style="width:180px;height:18px;">
-						Purchase Price</br>$<%= f.text_field :price2,:size => 10 %>
+						</br><%= f.text_field :drug2_amount,:size => 16 %>
 					</td>
 					<td style="width:90px;height:18px;">
-						</br><%= f.text_field :drug3_amount,:size => 12 %>
+						Purchase Price</br> $ <%= f.text_field :price2,:size => 10 %>
 					</td>
-					<td style="width:91px;height:18px;">
-						Purchase Price</br>$<%= f.text_field :price3,:size => 10 %>
+					<td style="width:90px;height:18px;">
+						</br><%= f.text_field :drug3_amount,:size => 16 %>
+					</td>
+					<td style="width:90px;height:18px;">
+						Purchase Price</br> $ <%= f.text_field :price3,:size => 10 %>
 					</td>
 				</tr>
 				<tr>
@@ -138,7 +138,7 @@
 		<td>
 		
 <h7>subjects:</h7>
-</br>		
+<div id="form_box">		
 <h8><%= f.label :Name %>:</h8><%= f.text_field :name1,:size => 25 %>
 <h8><%= f.label :dob %>:</h8><%= f.text_field :dob1,:size => 15 %>
 <h8><%= f.label :ssn %>:</h8><%= f.text_field :ssn1,:size => 15 %>
@@ -154,7 +154,9 @@
 <h8><%= f.label :misc %>:</h8><%= f.text_field :misc1,:size => 22 %>
 <h8><%= f.label :citizenship %>:</h8><%= f.text_field :citizenship1 %>
 </br>
-</br>
+
+<hr style="border:dashed #000000; border-width:1px 0 0 0; height:0;line-height:0px;font-size:0;margin:0;padding:0;">
+
 <h8><%= f.label :Name %>:</h8><%= f.text_field :name2,:size => 25 %>
 <h8><%= f.label :dob %>:</h8><%= f.text_field :dob2,:size => 15 %>
 <h8><%= f.label :ssn %>:</h8><%= f.text_field :ssn2,:size => 15 %>
@@ -169,31 +171,34 @@
 							  <%= radio_button_tag(:subject2, "Female") %> Passenger</br>
 <h8><%= f.label :misc %>:</h8><%= f.text_field :misc2,:size => 22 %>
 <h8><%= f.label :citizenship %>:</h8><%= f.text_field :citizenship2 %>		
-		
+</div>		
 		</td>
 	</tr>
 	<tr>
-		<td><h7>VEHICLE(S):
+		<td>
+		<h7>VEHICLE(S):      		
     <%= f.label :were_vehicle_seized %>: <%= radio_button_tag(:vehicle_seized, "Yes") %> Yes
 										  <%= radio_button_tag(:vehicle_seized, "No") %> No
-		</h7></br>
+		</h7>
+<div id="form_box">		
     <%= f.label :make %>: <%= f.text_field :vehicle1make,:size => 20  %>
     <%= f.label :model %>: <%= f.text_field :vehicle1model,:size => 20  %>
-    <%= f.label :year %>: <%= f.text_field :vehicle1year,:size => 11  %>
+    <%= f.label :year %>:  <%= f.select :vehicle1year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %>
     <%= f.label :license_place %>: <%= f.text_field :vehicle1lic_place,:size => 20  %></br>
-    <%= f.label :state %>: <%= f.text_field :vehicle1_state,:size => 20  %>
+    <%= f.label :state %>:  <%= select_tag :vehicle1_state, options_for_select(us_states) %>
     <%= f.label :color %>: <%= f.text_field :vehicle1_color,:size => 20  %>
     <%= f.label :registered_owner %>: <%= f.text_field :vehicle1_reg_owner,:size => 20  %></br>
-    </br>
+    
+<hr style="border:dashed #000000; border-width:1px 0 0 0; height:0;line-height:0px;font-size:0;margin:0;padding:0;">
     
     <%= f.label :make %>: <%= f.text_field :vehicle2make,:size => 20  %>
     <%= f.label :model %>: <%= f.text_field :vehicle2model2,:size => 20  %>
     <%= f.label :year %>: <%= f.text_field :vehicle1year,:size => 11  %>
     <%= f.label :license_place %>: <%= f.text_field :vehicle2lic_place,:size => 20  %></br>
-    <%= f.label :state %>: <%= f.text_field :vehicle2_state,:size => 20  %>
+    <%= f.label :state %>:  <%= select_tag :vehicle2_state, options_for_select(us_states) %>
     <%= f.label :color %>: <%= f.text_field :vehicle2_color,:size => 20  %>
     <%= f.label :registered_owner %>: <%= f.text_field :vehicle2_reg_owner,:size => 20  %>
-  
+</div>  
   
   
 		</td>

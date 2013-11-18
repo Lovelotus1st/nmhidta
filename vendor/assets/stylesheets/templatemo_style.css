@@ -206,7 +206,15 @@ em { color: #5d6d1e; }
 	width: 820px;
 	margin-right: 30px;
 	margin-left: 10px;
+
 }
+
+
+#form_box {
+line-height:2.0em;
+}
+
+
 
 #templatemo_header {
 	width: 360px;
