@@ -3,7 +3,8 @@ class Database < ActiveRecord::Base
 
 def self.search(search)
   if search
-    find(:all, :conditions => ['time LIKE ?', "%#{search}%"])
+    key = "%#{search}%"
+    find(:all, :conditions => ['time LIKE ? OR cjis LIKE ? OR seizing_taskforce LIKE ?', key, key, key])
   else
     find(:all)
   end
