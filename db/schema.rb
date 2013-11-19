@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131114041901) do
+ActiveRecord::Schema.define(:version => 20131119041256) do
 
   create_table "databases", :force => true do |t|
     t.string   "seizing_taskforce"
@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(:version => 20131114041901) do
     t.string   "agency_case"
     t.string   "cjis"
     t.string   "hidta_initiative"
-    t.string   "date_of_seizure"
-    t.string   "time"
+    t.date     "date_of_seizure",      :limit => 255
+    t.time     "time",                 :limit => 255
     t.string   "day_of_the_week"
     t.string   "type_of_event"
     t.string   "she_operation"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20131114041901) do
     t.string   "drug3_amount"
     t.string   "price3"
     t.string   "name1"
-    t.string   "dob1"
+    t.date     "dob1",                 :limit => 255
     t.string   "ssn1"
     t.string   "oln1"
     t.string   "gender1"
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20131114041901) do
     t.string   "tel_no1"
     t.string   "tel_data2"
     t.string   "name2"
-    t.string   "dob2"
+    t.date     "dob2",                 :limit => 255
     t.string   "ssn2"
     t.string   "oln2"
     t.string   "gender2"
@@ -110,8 +110,8 @@ ActiveRecord::Schema.define(:version => 20131114041901) do
     t.string   "extra10"
     t.string   "extra11"
     t.string   "extra12"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
   end
 
   create_table "users", :force => true do |t|
