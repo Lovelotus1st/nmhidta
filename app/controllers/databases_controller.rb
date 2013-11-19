@@ -11,6 +11,11 @@ class DatabasesController < ApplicationController
     end
   end
   
+  def search
+    @databases = Database.search(params[:search])
+  end 
+  
+  
   # GET /databases/1
   # GET /databases/1.json
   def show
