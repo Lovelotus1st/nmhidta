@@ -7,10 +7,11 @@ Nmhidta::Application.routes.draw do
   resources :drugs
 
 get "pages/support"
-get "pages/search"
+get "pages/audit"
 
 get "home/index" 
 get "databases/search"
+get "databases/audit"
   resources :databases do
   			resources :drugs
   			resources :subjects
@@ -21,7 +22,7 @@ get "log_out" => "sessions#destroy", :as => "log_out"
 get "log_in" => "sessions#new", :as => "log_in"
 get "sign_up" => "users#new", :as => "sign_up"
 get "home" => "home#index", :as => "home"
-#get "search" => "pages/search", :as => "search"
+get "audit" => "pages/audit", :as => "audit"
 get "search" => "databases#search", :as => "search"
 get "support" => "pages/support", :as => "support"
 root :to => "sessions#new"
