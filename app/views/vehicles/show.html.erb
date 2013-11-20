@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Database:</b>
+  <%= @vehicle.database_id %>
+</p>
+
+<p>
+  <b>Make:</b>
+  <%= @vehicle.make %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%= @vehicle.model %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @vehicle.year %>
+</p>
+
+<p>
+  <b>Lic plate:</b>
+  <%= @vehicle.lic_plate %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @vehicle.state %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%= @vehicle.color %>
+</p>
+
+<p>
+  <b>Registered owner:</b>
+  <%= @vehicle.registered_owner %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @vehicle.note %>
+</p>
+
+
+<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
+<%= link_to 'Back', vehicles_path %>

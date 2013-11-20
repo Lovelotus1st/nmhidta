@@ -2,6 +2,9 @@ class DatabasesController < ApplicationController
   # GET /databases
   # GET /databases.json
   def index
+    @vehicles = Vehicle.all
+    @subjects = Subject.all
+    @drugs = Drug.all
     @databases = Database.all
     @databases = Database.search(params[:search])
     respond_to do |format|

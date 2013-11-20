@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  database_id: 1
+  name: MyString
+  dob: 2013-11-20
+  ssn: 1
+  oln: 1
+  gender: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+  suspect: MyString
+  misc: MyString
+  citizenship: MyString
+  note: MyText
+
+two:
+  database_id: 1
+  name: MyString
+  dob: 2013-11-20
+  ssn: 1
+  oln: 1
+  gender: MyString
+  address: MyString
+  city: MyString
+  state: MyString
+  zip: 1
+  suspect: MyString
+  misc: MyString
+  citizenship: MyString
+  note: MyText

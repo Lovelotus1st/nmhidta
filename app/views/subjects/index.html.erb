@@ -1,0 +1,49 @@
+<h7>subjects</h7>
+
+<table border '1'>
+  <tr>
+    <th>Database</th>
+    <th>Name</th>
+    <th>Dob</th>
+    <th>Ssn</th>
+    <th>Oln</th>
+    <th>Gender</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Suspect</th>
+    <th>Misc</th>
+    <th>Citizenship</th>
+    <th>Note</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @subjects.each do |subject| %>
+  <tr>
+    <td><%= subject.database_id %></td>
+    <td><%= subject.name %></td>
+    <td><%= subject.dob %></td>
+    <td><%= subject.ssn %></td>
+    <td><%= subject.oln %></td>
+    <td><%= subject.gender %></td>
+    <td><%= subject.address %></td>
+    <td><%= subject.city %></td>
+    <td><%= subject.state %></td>
+    <td><%= subject.zip %></td>
+    <td><%= subject.suspect %></td>
+    <td><%= subject.misc %></td>
+    <td><%= subject.citizenship %></td>
+    <td><%= subject.note %></td>
+    <td><%= link_to 'Show', subject %></td>
+    <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
+    <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Subject', new_subject_path %>

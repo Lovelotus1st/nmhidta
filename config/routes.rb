@@ -1,5 +1,9 @@
 Nmhidta::Application.routes.draw do
 
+  resources :vehicles
+
+  resources :subjects
+
   resources :drugs
 
 get "pages/support"
@@ -9,6 +13,8 @@ get "home/index"
 get "databases/search"
   resources :databases do
   			resources :drugs
+  			resources :subjects
+  			resources :vehicles
   			end
 
 get "log_out" => "sessions#destroy", :as => "log_out"

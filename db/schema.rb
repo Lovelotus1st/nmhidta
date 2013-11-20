@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131120035304) do
+ActiveRecord::Schema.define(:version => 20131120110359) do
 
   create_table "databases", :force => true do |t|
     t.string   "seizing_taskforce"
@@ -124,12 +124,45 @@ ActiveRecord::Schema.define(:version => 20131120035304) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "subjects", :force => true do |t|
+    t.integer  "database_id"
+    t.string   "name"
+    t.date     "dob"
+    t.integer  "ssn"
+    t.integer  "oln"
+    t.string   "gender"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "zip"
+    t.string   "suspect"
+    t.string   "misc"
+    t.string   "citizenship"
+    t.text     "note"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "password_hash"
     t.string   "password_salt"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "vehicles", :force => true do |t|
+    t.integer  "database_id"
+    t.string   "make"
+    t.string   "model"
+    t.string   "year"
+    t.string   "lic_plate"
+    t.string   "state"
+    t.string   "color"
+    t.string   "registered_owner"
+    t.string   "note"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end

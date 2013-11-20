@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  database_id: 1
+  make: MyString
+  model: MyString
+  year: MyString
+  lic_plate: MyString
+  state: MyString
+  color: MyString
+  registered_owner: MyString
+  note: MyString
+
+two:
+  database_id: 1
+  make: MyString
+  model: MyString
+  year: MyString
+  lic_plate: MyString
+  state: MyString
+  color: MyString
+  registered_owner: MyString
+  note: MyString
