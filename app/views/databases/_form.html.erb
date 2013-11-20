@@ -181,9 +181,7 @@
 <table  width="100%"><tr>
 <td><h8><%= f.label :misc %>: </h8><%= f.text_field :misc1,:size => 22 %></td>
 <td><h8><%= f.label :citizenship %>: </h8> <%= f.select :citizenship1, options_for_select(countries) %></td></tr></table>
-
 <hr style="border:dashed #000000; border-width:1px 0 0 0; height:0;line-height:0px;font-size:0;margin:0;padding:0;">
-
 <table  width="100%"><tr>		
 <td><h8><%= f.label :Name %>: </h8><%= f.text_field :name2,:size => 14 %></td>
 <td><h8><%= f.label :dob %>: </h8><%= f.date_select(:dob2,:start_year => 1940) %></td>
@@ -203,10 +201,10 @@
 		</td>
 	</tr>
 	<tr>
-		<td>
+		<td>	
 <h7>VEHICLE(S): &nbsp &nbsp &nbsp<%= f.label :were_vehicle_seized %>:&nbsp Yes <%= f.radio_button(:vehicle_seized, "Following vehicle(s) was seized") %> No 
 										  <%= f.radio_button(:vehicle_seized, "Vehicle was not seized") %> </h7>
-<div id="form_box">	
+
 <table  width="100%"><tr>		
 <td><h8><%= f.label :make %>: <%= f.text_field :vehicle1make,:size => 15  %></td>
 <td><h8><%= f.label :model %>: <%= f.text_field :vehicle1model,:size => 15  %></td>
@@ -228,11 +226,12 @@
 <td><h8><%= f.label :state %>:  <%= f.select :vehicle2_state, options_for_select(us_states) %></td>
 <td><h8><%= f.label :color %>: <%= f.text_field :vehicle2_color,:size => 15  %></td>
 <td><h8><%= f.label :registered_owner %>: <%= f.text_field :vehicle2_reg_owner,:size => 26  %></td></tr></table>
-</div>  
-  
+
   
 		</td>
 	</tr>
+	
+	
 	<tr>
 		<td><h7>TELEPHONE DATA OBTAINED: TELEPHONE # : </h7>  <%= f.text_field :tel_no1 %> </br>
 		(Attach separate list if necessary – copies of pocket trash may be submitted electronically or in hard copy)</td>

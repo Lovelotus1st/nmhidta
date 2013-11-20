@@ -1,7 +1,7 @@
 <h7>Databases</h7>
 
 
-<table border "1">
+<table border="1" bordercolor="#000000" style="background-color:#F7F8E0" width="100%" cellpadding="3" cellspacing="1">
   <tr>
     <th>Seizing taskforce</th>
     <th>Investigating agency</th>
@@ -204,3 +204,290 @@
 <br />
 
 <%= link_to 'New Database', new_database_path %>
+<%= link_to 'Home', home_path %>
+</br></br>
+</br>
+<h7>Drugs</h7>
+
+<table border="1" bordercolor="#000000" style="background-color:#F7F8E0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th>Database</th>
+    <th>Drug name</th>
+    <th>Drug amount</th>
+    <th>Drug price</th>
+    <th>Weapons</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @drugs.each do |drug| %>
+  <tr>
+    <td><%= drug.database_id %></td>
+    <td><%= drug.drug_name %></td>
+    <td><%= drug.drug_amount %></td>
+    <td><%= drug.drug_price %></td>
+    <td><%= drug.weapons %></td>
+    <td><%= link_to 'Show', drug %></td>
+    <td><%= link_to 'Edit', edit_drug_path(drug) %></td>
+    <td><%= link_to 'Destroy', drug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+</br></br>
+</br>
+<h7>subjects</h7>
+
+<table border="1" bordercolor="#000000" style="background-color:#F7F8E0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th>Database</th>
+    <th>Name</th>
+    <th>Dob</th>
+    <th>Ssn</th>
+    <th>Oln</th>
+    <th>Gender</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Suspect</th>
+    <th>Misc</th>
+    <th>Citizenship</th>
+    <th>Note</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @subjects.each do |subject| %>
+  <tr>
+    <td><%= subject.database_id %></td>
+    <td><%= subject.name %></td>
+    <td><%= subject.dob %></td>
+    <td><%= subject.ssn %></td>
+    <td><%= subject.oln %></td>
+    <td><%= subject.gender %></td>
+    <td><%= subject.address %></td>
+    <td><%= subject.city %></td>
+    <td><%= subject.state %></td>
+    <td><%= subject.zip %></td>
+    <td><%= subject.suspect %></td>
+    <td><%= subject.misc %></td>
+    <td><%= subject.citizenship %></td>
+    <td><%= subject.note %></td>
+    <td><%= link_to 'Show', subject %></td>
+    <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
+    <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+
+</br></br>
+
+<h7>Listing vehicles</h7>
+
+<table border="1" bordercolor="#000000" style="background-color:#F7F8E0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th>Database</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Year</th>
+    <th>Lic plate</th>
+    <th>State</th>
+    <th>Color</th>
+    <th>Registered owner</th>
+    <th>Note</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vehicles.each do |vehicle| %>
+  <tr>
+    <td><%= vehicle.database_id %></td>
+    <td><%= vehicle.make %></td>
+    <td><%= vehicle.model %></td>
+    <td><%= vehicle.year %></td>
+    <td><%= vehicle.lic_plate %></td>
+    <td><%= vehicle.state %></td>
+    <td><%= vehicle.color %></td>
+    <td><%= vehicle.registered_owner %></td>
+    <td><%= vehicle.note %></td>
+    <td><%= link_to 'Show', vehicle %></td>
+    <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
+    <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br /> <br /> <br /> <br /> <br /> <br />
+
+<table border="1" bordercolor="#000000" style="background-color:#F7F8E0" width="100%" cellpadding="3" cellspacing="1">
+  <tr>
+    <th>Seizing taskforce</th>
+    <th>Investigating agency</th>
+    <th>Agency case</th>
+    <th>Cjis</th>
+    <th>Hidta initiative</th>
+    <th>Date of seizure</th>
+    <th>Time</th>
+    <th>Day of the week</th>
+    <th>Type of event</th>
+    <th>DHE operation</th>
+    <th>Road</th>
+    <th>Mile marker</th>
+    <th>Direction</th>
+    <th>Street address</th>
+    <th>City</th>
+    <th>Country</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Drugs                    </th>
+    <th>Subjects                    </th>
+
+    <th>Vehicle seized</th>
+    <th>Vehicles                   </th>
+    <th>Linked to</th>
+    <th>Name of organization</th>
+    <th>Agent contact</th>
+    <th>Agent tel</th>
+    <th>Analy support</th>
+    <th>Support method</th>
+    <th>Conceal method</th>
+    <th>False compart</th>
+    <th>Comp location</th>
+    <th>If cargo</th>
+    <th>K9</th>
+    <th>Lab inhouse</th>
+    <th>Applicable</th>
+  </tr>
+
+<% @databases.each do |database| %>
+  <tr>
+    <td><%= link_to database.seizing_taskforce, database  %></td>
+    <td><%= link_to database.investigating_agency, database  %></td>
+    <td><%= link_to database.agency_case, database  %></td>
+    <td><%= link_to database.cjis, database  %></td>
+    <td><%= link_to database.hidta_initiative, database  %></td>
+    <td><%= link_to database.date_of_seizure, database  %></td>
+    <td><%= link_to database.time, database  %></td>
+    <td><%= link_to database.day_of_the_week, database  %></td>
+    <td><%= database.type_of_event %></td>
+    <td><%= database.she_operation %></td>
+    <td><%= database.Road %></td>
+    <td><%= database.mile_marker %></td>
+    <td><%= database.direction %></td>
+    <td><%= database.street_address %></td>
+    <td><%= database.city %></td>
+    <td><%= database.country %></td>
+    <td><%= database.state %></td>
+    <td><%= database.zip %></td>
+    <td><table border="1" bordercolor="#000000" style="background-color:#F7F8E0" width="100%" cellpadding="3" cellspacing="1">
+  <tr>
+    <th>Drug name</th>
+    <th>Drug amount</th>
+    <th>Drug price</th>
+    <th>Weapons</th>
+  </tr>
+
+<% @drugs.each do |drug| %>
+  <tr>
+    <td><%= drug.drug_name %></td>
+    <td><%= drug.drug_amount %></td>
+    <td><%= drug.drug_price %></td>
+    <td><%= drug.weapons %></td>
+  </tr>
+<% end %>
+</table> </td>
+
+    <td><table border="1" bordercolor="#000000" style="background-color:#F7F8E0" width="100%" cellpadding="3" cellspacing="1">
+  <tr>
+    <th>Name</th>
+    <th>Dob</th>
+    <th>Ssn</th>
+    <th>Oln</th>
+    <th>Gender</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Suspect</th>
+    <th>Misc</th>
+    <th>Citizenship</th>
+    <th>Note</th>
+  </tr>
+
+<% @subjects.each do |subject| %>
+  <tr>
+    <td><%= subject.name %></td>
+    <td><%= subject.dob %></td>
+    <td><%= subject.ssn %></td>
+    <td><%= subject.oln %></td>
+    <td><%= subject.gender %></td>
+    <td><%= subject.address %></td>
+    <td><%= subject.city %></td>
+    <td><%= subject.state %></td>
+    <td><%= subject.zip %></td>
+    <td><%= subject.suspect %></td>
+    <td><%= subject.misc %></td>
+    <td><%= subject.citizenship %></td>
+  </tr>
+<% end %>
+</table> </td>
+    <td><%= database.vehicle_seized %></td>
+    <td><table border="1" bordercolor="#000000" style="background-color:#F7F8E0" width="100%" cellpadding="3" cellspacing="1">
+  <tr>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Year</th>
+    <th>Lic plate</th>
+    <th>State</th>
+    <th>Color</th>
+    <th>Registered owner</th>
+    <th>Note</th>
+  </tr>
+
+<% @vehicles.each do |vehicle| %>
+  <tr>
+    <td><%= vehicle.make %></td>
+    <td><%= vehicle.model %></td>
+    <td><%= vehicle.year %></td>
+    <td><%= vehicle.lic_plate %></td>
+    <td><%= vehicle.state %></td>
+    <td><%= vehicle.color %></td>
+    <td><%= vehicle.registered_owner %></td>
+    <td><%= vehicle.note %></td>
+  </tr>
+<% end %>
+</table> </td>
+    <td><%= database.linked_to %></td>
+    <td><%= database.name_of_organization %></td>
+    <td><%= database.agent_contact %></td>
+    <td><%= database.agent_tel %></td>
+    <td><%= database.analy_support %></td>
+    <td><%= database.support_method %></td>
+    <td><%= database.conceal_method %></td>
+    <td><%= database.false_compart %></td>
+    <td><%= database.comp_location %></td>
+    <td><%= database.if_cargo %></td>
+    <td><%= database.k9 %></td>
+    <td><%= database.lab_inhouse %></td>
+    <td><%= database.applicable %></td>
+
+                          
+  </tr>
+<% end %>
+</table>
+
+
+
+
+
+
+

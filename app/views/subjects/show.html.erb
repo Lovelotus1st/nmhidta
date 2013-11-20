@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Database:</b>
+  <%= @subject.database_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @subject.name %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%= @subject.dob %>
+</p>
+
+<p>
+  <b>Ssn:</b>
+  <%= @subject.ssn %>
+</p>
+
+<p>
+  <b>Oln:</b>
+  <%= @subject.oln %>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @subject.gender %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @subject.address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @subject.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @subject.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @subject.zip %>
+</p>
+
+<p>
+  <b>Suspect:</b>
+  <%= @subject.suspect %>
+</p>
+
+<p>
+  <b>Misc:</b>
+  <%= @subject.misc %>
+</p>
+
+<p>
+  <b>Citizenship:</b>
+  <%= @subject.citizenship %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @subject.note %>
+</p>
+
+
+<%= link_to 'Edit', edit_subject_path(@subject) %> |
+<%= link_to 'Back', subjects_path %>
