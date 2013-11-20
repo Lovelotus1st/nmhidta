@@ -29,12 +29,106 @@
         <div id="form_main">
 
 
-
-
-
-
 <p id="notice"><%= notice %></p>
 <h7>Database for : <%= @database.name1 %></h7></br> </br>
+
+<%= render :partial => @database %>
+
+ <table border="1" bordercolor="#000000" style="background-color:#F7F8E0" width="100%" cellpadding="3" cellspacing="1" >
+	 <!-----------------First row of form---------Title------------------------> 
+	<tr>
+		<td style="text-align:center"> <h7> NM HIDTA ISC EVENT/SEIZURE REPORT</h7> <br/>
+ 			PLEASE E-MAIL TO NM INVESTIGATIVE SUPPORT CENTER<br/>
+ 						TELEPHONE: (575) 647-6900<br/>
+ 						nmisc@nmhidta.org  </td>
+	</tr>
+	<tr>
+		<td><div id="form_box">
+		<table width="100%"><tr>
+		<td style="width:50%;height:15px;">
+		      <h7>seizing taskforce </h7>: <%= @database.seizing_taskforce %></td>
+		  <td><h7>investigating agency </h7>: <%= @database.investigating_agency %></br></td>
+		 </tr></table>
+		<table width="100%"><tr>
+		  <td style="width:32%;height:15px;"><h8>agency_case #:</h8>  <%= @database.agency_case %></td>
+		  <td style="width:24%;height:15px;"><h8>cjis #: <%= @database.cjis %></h8></td>
+ 		  <td style="width:44%;height:15px;"><h7>hidta_initiative : <%= @database.hidta_initiative %></h7></td></tr></table>
+		<table width="100%"><tr>     
+		  <td style="width:35%;height:15px;"><h8>date_of_seizure: <%= @database.date_of_seizure %></h8></td>
+		  <td style="width:33%;height:15px;"><h8>time  :  <%= @database.time %></h8></td>
+		  <td style="width:32%;height:15px;"><h8>day_of_the_week : <%= @database.day_of_the_week %> </h8></td></tr></table>
+		<table width="100%"><tr>     
+		  <td style="width:50%;height:15px;"><h8>type_of_event : </h8> <%= @database.type_of_event %></td>
+		  <td style="width:50%;height:15px;"><h8>dhe_operation : </h8> <%= @database.she_operation %></td></tr></table>
+	</div>	</td>   
+	</tr>
+	<tr>
+		<td><div class="field">
+		<h7> Location:</h7></br>
+<div id="form_box">	
+<table width="100%">
+    <tr> 	
+     <td style="width:32%;height:15px;"><h8>Road/highway:</h8> <%= @database.Road %></td>
+     <td style="width:28%;height:15px;"><h8>mile marker:</h8> <%= @database.mile_marker %></td>
+     <td style="width:40%;height:15px;"><h8>direction of travel : </h8> <%= @database.direction %></td></tr></table> 
+<table width="100%"><tr>
+     <td style="width:100%;height:15px;"><h8>street address: </h8> <%= @database.street_address %></td></tr></table> 
+<table width="100%"><tr>
+     <td style="width:17%;height:15px;"><h8>city: </h8> <%= @database.city %></td>
+     <td style="width:47.5%;height:15px;"><h8>country </h8>: <%= @database.country %></td>
+     <td style="width:25%;height:15px;"><h8>state: </h8> <%= @database.state %></td>
+	 <td style="width:13%;height:15px;"><h8>zip: </h8> <%= @database.zip %></td></tr></table>     
+		
+</div>	 </td>
+</div></td>
+	</tr>
+	
+	
+	</table>
+</br>
+ <!----------------------Drug part start-------------------------------> 
+<table border="0" style="background-color:#CEF6E3" width="100%">
+<div id="drugs">
+
+<tr>
+	<th>Name</th>
+	<th>Amount</th>
+	<th>Price</th>
+	<th>Weapons</th>
+	<th>Date Entered</th>
+</tr>
+
+<% @database.drugs.each do |drug| %>
+		<%= div_for drug do %>
+<tr>
+    <td><%= drug.drug_name %></td>
+    <td><%= drug.drug_amount %></td>
+    <td><%= drug.drug_price %></td>
+    <td><%= drug.weapons %></td>
+    <td><%= drug.created_at %></td>
+  </tr>
+  </div>
+
+<% end %>
+<% end %>
+</table>
+</br>
+<%= simple_form_for [@database, Drug.new], :remote => true do |f| %>
+  <div class="form-inputs">
+    
+<table border="0" style="background-color:#F6CECE" width="100%"><tr>
+    <td>Name: <%= f.text_field :drug_name,:size => 10 %></td>
+    <td>Amount: <%= f.text_field :drug_amount,:size => 10 %></td>
+    <td>Price: <%= f.text_field :drug_price,:size => 10 %></td>
+    <td>Weapons: <%= f.text_field :weapons,:size => 10 %></td>
+    <td><%= f.submit "Add drugs" %> </td>
+  </tr>    
+</table>    
+  </div>
+<% end %>
+
+ <!----------------------Drug part end-------------------------------> 
+
 <p>
   <b>Seizing taskforce:</b>
   <%= @database.seizing_taskforce %>

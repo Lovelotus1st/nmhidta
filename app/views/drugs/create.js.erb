@@ -1,0 +1,5 @@
+
+var new_drug = $("<%= escape_javascript(render (:partial => @drug))%>").hide();
+$(’#drugs’).prepend(new_drug);
+$(’#drug <%= @drug.id %>’).fadeIn(’slow’);
+$(’#new_drug’)[0].reset()

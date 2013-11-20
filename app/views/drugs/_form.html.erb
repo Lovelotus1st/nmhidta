@@ -1,0 +1,15 @@
+<%= simple_form_for(@drug) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :database_id %>
+    <%= f.input :drug_name %>
+    <%= f.input :drug_amount %>
+    <%= f.input :drug_price %>
+    <%= f.input :weapons %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

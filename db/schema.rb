@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131119041256) do
+ActiveRecord::Schema.define(:version => 20131120035304) do
 
   create_table "databases", :force => true do |t|
     t.string   "seizing_taskforce"
@@ -112,6 +112,16 @@ ActiveRecord::Schema.define(:version => 20131119041256) do
     t.string   "extra12"
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
+  end
+
+  create_table "drugs", :force => true do |t|
+    t.integer  "database_id"
+    t.string   "drug_name"
+    t.decimal  "drug_amount"
+    t.decimal  "drug_price"
+    t.text     "weapons"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
