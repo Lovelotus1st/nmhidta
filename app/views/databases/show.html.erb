@@ -328,7 +328,7 @@
 <!---------------------------Vehicles info------------------------------------------->	
 <tr>
 		<td>	
-<h7>VEHICLE(S): &nbsp &nbsp &nbsp were vehicle seized:  <%=  @database.vehicle_seized %> </h7>
+<h7>VEHICLE(S): &nbsp &nbsp &nbsp were vehicle seized:</h7> <h9>  <%=  @database.vehicle_seized %> </h9>
 
 <table  width="100%"><tr>		
 <td><h8>make: <%= @database.vehicle1make %></td>
@@ -351,13 +351,52 @@
 <td><h8>state :  <%= @database.vehicle2_state %></td>
 <td><h8>color : <%= @database.vehicle2_color  %></td>
 <td><h8>registered owner : <%= @database.vehicle2_reg_owner  %></td></tr></table>  
-  
-		</td>
-	</tr>	
+ <!---------------------(added) vehicles will be saved here----------!!!----------> 
+<table border="0" style="background-color:#CEF6E3" width="100%">
+<tr><td>
+
+
+
+<% @database.vehicles.each do |vehicle| %>
+<%= div_for vehicle do %>
+<table  width="100%"><tr>		
+<td><h8>make: <%= vehicle.make  %></td>
+<td><h8>model: <%= vehicle.model  %></td>
+<td><h8>Year:  <%= vehicle.year %></td>
+<td><h8>license plate:  <%= vehicle.lic_plate  %></td></tr></table>	
+<table  width="100%"><tr>
+<td><h8>state: <%= vehicle.state %></td>
+<td><h8>color: <%= vehicle.color  %></td>
+<td><h8>registered owner: <%= vehicle.registered_owner  %></td></tr></table>
+
+<% end %>
+<% end %>
+
+  </td>
+  </tr> 
+  </table>	
+<!---------------------(added) vehicles will be saved here----------^^^----------> 
+<!---------------------(added) vehicles form----------!!!----------> 
 	
+<%= simple_form_for [@database, Vehicle.new], :remote => true do |f| %>	
+<table  border="0" style="background-color:#F6CECE" width="100%"><tr>		
+<td><h8><%= f.label :make %>: <%= f.text_field :make,:size => 15  %></td>
+<td><h8><%= f.label :model %>: <%= f.text_field :model,:size => 15  %></td>
+<td><h8><%= f.label :year %>:  <%= f.select :year, (Time.zone.now.year - 100)..(Time.zone.now.year + 1) %></td>
+<td><h8><%= f.label :license_place %>: <%= f.text_field :lic_plate,:size => 15  %></td></tr></table>	
+<table  border="0" style="background-color:#F6CECE" width="100%"><tr>
+<td><h8><%= f.label :state %>:  <%= f.select :state, options_for_select(us_states) %></td>
+<td><h8><%= f.label :color %>: <%= f.text_field :color,:size => 15  %></td>
+<td><h8><%= f.label :registered_owner %>: <%= f.text_field :registered_owner,:size => 26  %></td>
+<td><div class="form-actions"> <%= f.submit "Add Vehicle" %></td></tr></table>
+</div>
+  <% end %>	
+  
+  </td>
+	</tr>
 <!--------------------------------------------------------------------->	
 	<tr>
-		<td><h7>TELEPHONE DATA OBTAINED: TELEPHONE # : </h7>  <%= @database.tel_no1 %> </br>
+		<td><h7>TELEPHONE DATA OBTAINED: TELEPHONE # : </h7>  <h8><%= @database.tel_no1 %></h8> <h8><%= @database.tel_data2 %></h8> </br>
 		(Attach separate list if necessary – copies of pocket trash may be submitted electronically or in hard copy)</td>
 	</tr>
 	<tr>
@@ -402,42 +441,10 @@
 	
 	</table>
 </br> 
+
+
+
 <!-------------------------------------------------------
-
-
-
-<table border="1" style="background-color:#CEF6E3" width="100%">
-</tr>
-<% @database.subjects.each do |subject| %>
-<%= div_for subject do %>
-<table  width="100%"><tr>		
-<td><h8>Name: </h8><%= subject.name %></td>
-<td><h8>DOB: </h8><%= subject.dob %></td>
-<td><h8>SSN :</h8><%= subject.ssn %></td>
-<td><h8>OLN: </h8><%= subject.oln %></td>
-<td><h9>Gender:  <%= subject.gender %></h9></td></tr></table>
-<table  width="100%"><tr>
-<td><h8>address: </h8><%= subject.address %></td>
-<td><h8>city: </h8><%= subject.city %></td>
-<td><h8>state: </h8> <%= subject.state %></td>
-<td><h8>zip : </h8><%= subject.zip %></td>
-<td><h9>Subject was: <%= subject.suspect %></h9></td></tr></table>
-<table  width="100%"><tr>
-<td><h8>misc : </h8><%= subject.misc %></td>
-<td><h8>citizenship : </h8> <%= subject.citizenship %></td></tr></table>
-
-<% end %>
-<% end %>
-  </tr>
-</table>
-
-
-
-
-
-
-
-
 
 
 

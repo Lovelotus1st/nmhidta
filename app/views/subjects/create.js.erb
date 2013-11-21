@@ -1,2 +1,4 @@
 $(’#subjects’).prepend("<%= escape javascript(render(:partial => @subject))%>");
 $(’#new_subject’)[0].reset();
+$(’#subject <%= @subject.id %>’).fadeIn(’slow’);
+$(’#new_subject’)[0].reset()

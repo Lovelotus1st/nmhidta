@@ -1,2 +1,4 @@
 $(’#vehicles’).prepend("<%= escape javascript(render(:partial => @vehicle))%>");
 $(’#new_vehicle’)[0].reset();
+$(’#vehicle <%= @vehicle.id %>’).fadeIn(’slow’);
+$(’#new_vehicle’)[0].reset()

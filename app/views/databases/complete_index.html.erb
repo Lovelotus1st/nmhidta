@@ -1,0 +1,473 @@
+<h7>Databases</h7>
+
+
+<table border="1" bordercolor="#000000" style="background-color:#F7F8E0" width="100%" cellpadding="3" cellspacing="1">
+  <tr>
+    <th>Seizing taskforce</th>
+    <th>Investigating agency</th>
+    <th>Agency case</th>
+    <th>Cjis</th>
+    <th>Hidta initiative</th>
+    <th>Date of seizure</th>
+    <th>Time</th>
+    <th>Day of the week</th>
+    <th>Type of event</th>
+    <th>DHE operation</th>
+    <th>Road</th>
+    <th>Mile marker</th>
+    <th>Direction</th>
+    <th>Street address</th>
+    <th>City</th>
+    <th>Country</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Drug1</th>
+    <th>Drug1 amount</th>
+    <th>Rice1</th>
+    <th>Drug2</th>
+    <th>Drug2 amount</th>
+    <th>Price2</th>
+    <th>Drug3</th>
+    <th>Drug3 amount</th>
+    <th>Price3</th>
+    <th>Name1</th>
+    <th>Dob1</th>
+    <th>Ssn1</th>
+    <th>Oln1</th>
+    <th>Gender1</th>
+    <th>Address1</th>
+    <th>City1</th>
+    <th>State1</th>
+    <th>Zip1</th>
+    <th>Subject1</th>
+    <th>Misc1</th>
+    <th>Citizenship1</th>
+    <th>Picture1</th>
+    <th>Tel no1</th>
+    <th>Tel data2</th>
+    <th>Name2</th>
+    <th>Dob2</th>
+    <th>Ssn2</th>
+    <th>Oln2</th>
+    <th>Gender2</th>
+    <th>Address2</th>
+    <th>City2</th>
+    <th>State2</th>
+    <th>Zip2</th>
+    <th>Subject2</th>
+    <th>Misc2</th>
+    <th>Citizenship2</th>
+    <th>Picture2</th>
+    <th>Tel no2</th>
+    <th>Tel data2</th>
+    <th>Vehicle seized</th>
+    <th>Vehicle1make</th>
+    <th>Vehicle1model</th>
+    <th>Vehicle1year</th>
+    <th>Vehicle1lic place</th>
+    <th>Vehicle1 state</th>
+    <th>Vehicle1 color</th>
+    <th>Vehicle1 reg owner</th>
+    <th>Vehicle2make</th>
+    <th>Vehicle2model2</th>
+    <th>Vehicle2year</th>
+    <th>Vehicle2lic place</th>
+    <th>Vehicle2 state</th>
+    <th>Vehicle2 color</th>
+    <th>Vehicle2 reg owner</th>
+    <th>Linked to</th>
+    <th>Name of organization</th>
+    <th>Agent contact</th>
+    <th>Agent tel</th>
+    <th>Analy support</th>
+    <th>Support method</th>
+    <th>Conceal method</th>
+    <th>False compart</th>
+    <th>Comp location</th>
+    <th>If cargo</th>
+    <th>K9</th>
+    <th>Lab inhouse</th>
+    <th>Applicable</th>
+  </tr>
+
+<% @databases.each do |database| %>
+  <tr>
+    <td><%= link_to database.seizing_taskforce, database  %></td>
+    <td><%= link_to database.investigating_agency, database  %></td>
+    <td><%= link_to database.agency_case, database  %></td>
+    <td><%= link_to database.cjis, database  %></td>
+    <td><%= link_to database.hidta_initiative, database  %></td>
+    <td><%= link_to database.date_of_seizure, database  %></td>
+    <td><%= link_to database.time, database  %></td>
+    <td><%= link_to database.day_of_the_week, database  %></td>
+    <td><%= database.type_of_event %></td>
+    <td><%= database.she_operation %></td>
+    <td><%= database.Road %></td>
+    <td><%= database.mile_marker %></td>
+    <td><%= database.direction %></td>
+    <td><%= database.street_address %></td>
+    <td><%= database.city %></td>
+    <td><%= database.country %></td>
+    <td><%= database.state %></td>
+    <td><%= database.zip %></td>
+    <td><%= database.drug1 %></td>
+    <td><%= database.drug1_amount %></td>
+    <td><%= database.rice1 %></td>
+    <td><%= database.drug2 %></td>
+    <td><%= database.drug2_amount %></td>
+    <td><%= database.price2 %></td>
+    <td><%= database.drug3 %></td>
+    <td><%= database.drug3_amount %></td>
+    <td><%= database.price3 %></td>
+    <td><%= database.name1 %></td>
+    <td><%= database.dob1 %></td>
+    <td><%= database.ssn1 %></td>
+    <td><%= database.oln1 %></td>
+    <td><%= database.gender1 %></td>
+    <td><%= database.address1 %></td>
+    <td><%= database.city1 %></td>
+    <td><%= database.state1 %></td>
+    <td><%= database.zip1 %></td>
+    <td><%= database.subject1 %></td>
+    <td><%= database.misc1 %></td>
+    <td><%= database.citizenship1 %></td>
+    <td><%= database.picture1 %></td>
+    <td><%= database.tel_no1 %></td>
+    <td><%= database.tel_data2 %></td>
+    <td><%= database.name2 %></td>
+    <td><%= database.dob2 %></td>
+    <td><%= database.ssn2 %></td>
+    <td><%= database.oln2 %></td>
+    <td><%= database.gender2 %></td>
+    <td><%= database.address2 %></td>
+    <td><%= database.city2 %></td>
+    <td><%= database.state2 %></td>
+    <td><%= database.zip2 %></td>
+    <td><%= database.subject2 %></td>
+    <td><%= database.misc2 %></td>
+    <td><%= database.citizenship2 %></td>
+    <td><%= database.picture2 %></td>
+    <td><%= database.tel_no2 %></td>
+    <td><%= database.tel_data2 %></td>
+    <td><%= database.vehicle_seized %></td>
+    <td><%= database.vehicle1make %></td>
+    <td><%= database.vehicle1model %></td>
+    <td><%= database.vehicle1year %></td>
+    <td><%= database.vehicle1lic_place %></td>
+    <td><%= database.vehicle1_state %></td>
+    <td><%= database.vehicle1_color %></td>
+    <td><%= database.vehicle1_reg_owner %></td>
+    <td><%= database.vehicle2make %></td>
+    <td><%= database.vehicle2model2 %></td>
+    <td><%= database.vehicle2year %></td>
+    <td><%= database.vehicle2lic_place %></td>
+    <td><%= database.vehicle2_state %></td>
+    <td><%= database.vehicle2_color %></td>
+    <td><%= database.vehicle2_reg_owner %></td>
+    <td><%= database.linked_to %></td>
+    <td><%= database.name_of_organization %></td>
+    <td><%= database.agent_contact %></td>
+    <td><%= database.agent_tel %></td>
+    <td><%= database.analy_support %></td>
+    <td><%= database.support_method %></td>
+    <td><%= database.conceal_method %></td>
+    <td><%= database.false_compart %></td>
+    <td><%= database.comp_location %></td>
+    <td><%= database.if_cargo %></td>
+    <td><%= database.k9 %></td>
+    <td><%= database.lab_inhouse %></td>
+    <td><%= database.applicable %></td>
+    <td><%= database.extra1 %></td>
+    <td><%= database.extra2 %></td>
+    <td><%= database.extra3 %></td>
+    <td><%= database.extra4 %></td>
+    <td><%= database.extra5 %></td>
+    <td><%= database.extra6 %></td>
+    <td><%= database.extra7 %></td>
+    <td><%= database.extra8 %></td>
+    <td><%= database.extra9 %></td>
+    <td><%= database.extra10 %></td>
+    <td><%= database.extra11 %></td>
+    <td><%= database.extra12 %></td>
+   
+                          
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Database', new_database_path %>
+<%= link_to 'Home', home_path %>
+</br></br>
+</br>
+<h7>Drugs</h7>
+
+<table border="1" bordercolor="#000000" style="background-color:#F7F8E0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th>Database</th>
+    <th>Drug name</th>
+    <th>Drug amount</th>
+    <th>Drug price</th>
+    <th>Weapons</th>
+
+  </tr>
+
+<% @drugs.each do |drug| %>
+  <tr>
+    <td><%= drug.database_id %></td>
+    <td><%= drug.drug_name %></td>
+    <td><%= drug.drug_amount %></td>
+    <td><%= drug.drug_price %></td>
+    <td><%= drug.weapons %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+</br></br>
+</br>
+<h7>subjects</h7>
+
+<table border="1" bordercolor="#000000" style="background-color:#F7F8E0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th>Database</th>
+    <th>Name</th>
+    <th>Dob</th>
+    <th>Ssn</th>
+    <th>Oln</th>
+    <th>Gender</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Suspect</th>
+    <th>Misc</th>
+    <th>Citizenship</th>
+    <th>Note</th>
+
+  </tr>
+
+<% @subjects.each do |subject| %>
+  <tr>
+    <td><%= subject.database_id %></td>
+    <td><%= subject.name %></td>
+    <td><%= subject.dob %></td>
+    <td><%= subject.ssn %></td>
+    <td><%= subject.oln %></td>
+    <td><%= subject.gender %></td>
+    <td><%= subject.address %></td>
+    <td><%= subject.city %></td>
+    <td><%= subject.state %></td>
+    <td><%= subject.zip %></td>
+    <td><%= subject.suspect %></td>
+    <td><%= subject.misc %></td>
+    <td><%= subject.citizenship %></td>
+    <td><%= subject.note %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
+
+</br></br>
+
+<h7>Listing vehicles</h7>
+
+<table border="1" bordercolor="#000000" style="background-color:#F7F8E0" cellpadding="3" cellspacing="1">
+  <tr>
+    <th>Database</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Year</th>
+    <th>Lic plate</th>
+    <th>State</th>
+    <th>Color</th>
+    <th>Registered owner</th>
+    <th>Note</th>
+
+  </tr>
+
+<% @vehicles.each do |vehicle| %>
+  <tr>
+    <td><%= vehicle.database_id %></td>
+    <td><%= vehicle.make %></td>
+    <td><%= vehicle.model %></td>
+    <td><%= vehicle.year %></td>
+    <td><%= vehicle.lic_plate %></td>
+    <td><%= vehicle.state %></td>
+    <td><%= vehicle.color %></td>
+    <td><%= vehicle.registered_owner %></td>
+    <td><%= vehicle.note %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br /> <br /> <br /> <br /> <br /> <br />
+
+<table border="1" bordercolor="#000000" style="background-color:#F7F8E0" width="100%" cellpadding="3" cellspacing="1">
+  <tr>
+    <th>Seizing taskforce</th>
+    <th>Investigating agency</th>
+    <th>Agency case</th>
+    <th>Cjis</th>
+    <th>Hidta initiative</th>
+    <th>Date of seizure</th>
+    <th>Time</th>
+    <th>Day of the week</th>
+    <th>Type of event</th>
+    <th>DHE operation</th>
+    <th>Road</th>
+    <th>Mile marker</th>
+    <th>Direction</th>
+    <th>Street address</th>
+    <th>City</th>
+    <th>Country</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Drugs                    </th>
+    <th>Subjects                    </th>
+
+    <th>Vehicle seized</th>
+    <th>Vehicles                   </th>
+    <th>Linked to</th>
+    <th>Name of organization</th>
+    <th>Agent contact</th>
+    <th>Agent tel</th>
+    <th>Analy support</th>
+    <th>Support method</th>
+    <th>Conceal method</th>
+    <th>False compart</th>
+    <th>Comp location</th>
+    <th>If cargo</th>
+    <th>K9</th>
+    <th>Lab inhouse</th>
+    <th>Applicable</th>
+  </tr>
+
+<% @databases.each do |database| %>
+  <tr>
+    <td><%= link_to database.seizing_taskforce, database  %></td>
+    <td><%= link_to database.investigating_agency, database  %></td>
+    <td><%= link_to database.agency_case, database  %></td>
+    <td><%= link_to database.cjis, database  %></td>
+    <td><%= link_to database.hidta_initiative, database  %></td>
+    <td><%= link_to database.date_of_seizure, database  %></td>
+    <td><%= link_to database.time, database  %></td>
+    <td><%= link_to database.day_of_the_week, database  %></td>
+    <td><%= database.type_of_event %></td>
+    <td><%= database.she_operation %></td>
+    <td><%= database.Road %></td>
+    <td><%= database.mile_marker %></td>
+    <td><%= database.direction %></td>
+    <td><%= database.street_address %></td>
+    <td><%= database.city %></td>
+    <td><%= database.country %></td>
+    <td><%= database.state %></td>
+    <td><%= database.zip %></td>
+    <td><table border="1" bordercolor="#000000" style="background-color:#F7F8E0" width="100%" cellpadding="3" cellspacing="1">
+  <tr>
+    <th>Drug name</th>
+    <th>Drug amount</th>
+    <th>Drug price</th>
+    <th>Weapons</th>
+  </tr>
+
+<% @drugs.each do |drug| %>
+  <tr>
+    <td><%= drug.drug_name %></td>
+    <td><%= drug.drug_amount %></td>
+    <td><%= drug.drug_price %></td>
+    <td><%= drug.weapons %></td>
+  </tr>
+<% end %>
+</table> </td>
+
+    <td><table border="1" bordercolor="#000000" style="background-color:#F7F8E0" width="100%" cellpadding="3" cellspacing="1">
+  <tr>
+    <th>Name</th>
+    <th>Dob</th>
+    <th>Ssn</th>
+    <th>Oln</th>
+    <th>Gender</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Suspect</th>
+    <th>Misc</th>
+    <th>Citizenship</th>
+    <th>Note</th>
+  </tr>
+
+<% @subjects.each do |subject| %>
+  <tr>
+    <td><%= subject.name %></td>
+    <td><%= subject.dob %></td>
+    <td><%= subject.ssn %></td>
+    <td><%= subject.oln %></td>
+    <td><%= subject.gender %></td>
+    <td><%= subject.address %></td>
+    <td><%= subject.city %></td>
+    <td><%= subject.state %></td>
+    <td><%= subject.zip %></td>
+    <td><%= subject.suspect %></td>
+    <td><%= subject.misc %></td>
+    <td><%= subject.citizenship %></td>
+  </tr>
+<% end %>
+</table> </td>
+    <td><%= database.vehicle_seized %></td>
+    <td><table border="1" bordercolor="#000000" style="background-color:#F7F8E0" width="100%" cellpadding="3" cellspacing="1">
+  <tr>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Year</th>
+    <th>Lic plate</th>
+    <th>State</th>
+    <th>Color</th>
+    <th>Registered owner</th>
+    <th>Note</th>
+  </tr>
+
+<% @vehicles.each do |vehicle| %>
+  <tr>
+    <td><%= vehicle.make %></td>
+    <td><%= vehicle.model %></td>
+    <td><%= vehicle.year %></td>
+    <td><%= vehicle.lic_plate %></td>
+    <td><%= vehicle.state %></td>
+    <td><%= vehicle.color %></td>
+    <td><%= vehicle.registered_owner %></td>
+    <td><%= vehicle.note %></td>
+  </tr>
+<% end %>
+</table> </td>
+    <td><%= database.linked_to %></td>
+    <td><%= database.name_of_organization %></td>
+    <td><%= database.agent_contact %></td>
+    <td><%= database.agent_tel %></td>
+    <td><%= database.analy_support %></td>
+    <td><%= database.support_method %></td>
+    <td><%= database.conceal_method %></td>
+    <td><%= database.false_compart %></td>
+    <td><%= database.comp_location %></td>
+    <td><%= database.if_cargo %></td>
+    <td><%= database.k9 %></td>
+    <td><%= database.lab_inhouse %></td>
+    <td><%= database.applicable %></td>
+
+                          
+  </tr>
+<% end %>
+</table>
+
+
+
+
+
+
+
