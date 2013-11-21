@@ -11,6 +11,7 @@ get "pages/audit"
 
 get "home/index" 
 get "databases/search"
+get "databases/complete_index"
 get "databases/audit"
   resources :databases do
   			resources :drugs
@@ -24,6 +25,7 @@ get "sign_up" => "users#new", :as => "sign_up"
 get "home" => "home#index", :as => "home"
 get "audit" => "pages/audit", :as => "audit"
 get "search" => "databases#search", :as => "search"
+get "complete_index" => "databases#complete_index", :as => "complete_index"
 get "support" => "pages/support", :as => "support"
 root :to => "sessions#new"
 resources :users
