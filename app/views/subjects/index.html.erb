@@ -1,7 +1,49 @@
-<h7>subjects</h7>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>New Database</title>
+<meta name="keywords" content="clean blog template, about page, html css layout" />
+<meta name="description" content="Clean Blog Template is a W3C standards-compliant HTML-CSS layout by templatemo.com" />
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="form_wrapper">
 
-<table border '1'>
-  <tr>
+	<div id="templatemo_menu">
+                
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/databases/new">New Entry</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="/pages/support.html">Support</a></li>
+        </ul>	
+    
+    </div> <!-- menu -->
+
+    
+    <div id="form_right_column">
+    
+    
+ <!------------------------------------------------------------------------->       
+        <div id="form_main">
+
+<%= form_tag subjects_path, :method => 'get' do %>
+<table border="1" bordercolor="#000000" style="background-color:#CCCC99" width="100%" cellpadding="1" cellspacing="1">
+<tr>
+<td style="width:200px;height:10px;"><h7> Search by subject</h7></td><td><%= text_field_tag :search, params[:search], :size =>40 %></td><td>    <%= submit_tag "search", :name => nil %>   </td>
+</tr>
+</table>
+</br>
+<% end %>
+        
+
+
+   <h7>Subjects</h7>
+
+
+<table border="1" bordercolor="#000000" style="background-color:#F7F8E0" width="100%" cellpadding="3" cellspacing="1">
+<tr>
     <th>Database</th>
     <th>Name</th>
     <th>Dob</th>
@@ -16,34 +58,47 @@
     <th>Misc</th>
     <th>Citizenship</th>
     <th>Note</th>
-    <th></th>
-    <th></th>
-    <th></th>
+
   </tr>
 
 <% @subjects.each do |subject| %>
   <tr>
-    <td><%= subject.database_id %></td>
-    <td><%= subject.name %></td>
-    <td><%= subject.dob %></td>
-    <td><%= subject.ssn %></td>
-    <td><%= subject.oln %></td>
-    <td><%= subject.gender %></td>
-    <td><%= subject.address %></td>
-    <td><%= subject.city %></td>
-    <td><%= subject.state %></td>
-    <td><%= subject.zip %></td>
-    <td><%= subject.suspect %></td>
+    <td><%=link_to subject.database_id, subject %></td>
+    <td><%=link_to subject.name, subject %></td>
+    <td><%=link_to  subject.dob, subject %></td>
+    <td><%= link_to subject.ssn, subject %></td>
+    <td><%=link_to  subject.oln, subject %></td>
+    <td><%=link_to  subject.gender, subject %></td>
+    <td><%=link_to  subject.address, subject %></td>
+    <td><%=link_to  subject.city, subject %></td>
+    <td><%=link_to  subject.state, subject %></td>
+    <td><%=link_to  subject.zip, subject %></td>
+    <td><%=link_to  subject.suspect, subject %></td>
     <td><%= subject.misc %></td>
     <td><%= subject.citizenship %></td>
     <td><%= subject.note %></td>
-    <td><%= link_to 'Show', subject %></td>
-    <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-    <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
+     
+        
+        </div>
+  <!------------------------------------------------------------------------->    
+  <div class="cleaner"></div>
+  </div> 
+    <!-- end of templatemo_main -->
+  <div class="cleaner_h20"></div>
+  
+  	<div id="templatemo_footer">
+    
+		Copyright © 2013 <a href="#">NMHIDTA</a> | 
+        <a href="http://nmhidta.org" target="_parent">Database</a> by <a href="http://www.unm.edu" target="_parent">Green team</a>
+        
+    </div>
+  
+    <div class="cleaner"></div>
+</div> <!-- end of warpper -->
 
-<br />
+</body>
+</html>
 
-<%= link_to 'New Subject', new_subject_path %>

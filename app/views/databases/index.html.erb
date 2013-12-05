@@ -15,7 +15,7 @@
         <ul>
             <li><a href="/home">Home</a></li>
             <li><a href="/databases/new">New Entry</a></li>
-            <li><a href="search.html" class="current">Search</a></li>
+            <li><a href="search.html">Search</a></li>
             <li><a href="/pages/support.html">Support</a></li>
         </ul>	
     
@@ -28,7 +28,12 @@
  <!------------------------------------------------------------------------->       
         <div id="form_main">
 
+
+        
+
+
    <h7>Databases</h7>
+
 
 <table border="1" bordercolor="#000000" style="background-color:#F7F8E0" width="100%" cellpadding="3" cellspacing="1">
   <tr>
@@ -39,6 +44,9 @@
     <th>Time</th>
 
   </tr>
+
+
+
 
 <% @databases.each do |database| %>
   <tr>

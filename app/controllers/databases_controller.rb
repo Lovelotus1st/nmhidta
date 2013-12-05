@@ -30,7 +30,23 @@ def complete_index
   
   
   
-   def audit
+   def all
+    @vehicles = Vehicle.all
+    @subjects = Subject.all
+    @drugs = Drug.all
+    @databases = Database.all
+    @users = User.all
+    @databases = Database.search(params[:search])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @databases }
+      
+    end
+  end 
+  
+  
+  
+     def audit
     @vehicles = Vehicle.all
     @subjects = Subject.all
     @drugs = Drug.all

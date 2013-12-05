@@ -19,7 +19,7 @@
 <div id="templatemo_menu">
 
 <ul>
-<li><a href="#" class="current">Home</a></li>
+<li><a href="/home/admin" class="current">Home</a></li>
 <li><a href="/databases/new">New Form</a></li>
 <li><a href="/databases/search.html">Search</a></li>
 <li><a href="pages/support.html">Support</a></li>
@@ -51,7 +51,6 @@
 
 <div class="cleaner_h40"></div>
 
-
 <ul class="templatemo_list">
 
 </ul>
@@ -80,6 +79,7 @@ Welcome, <%= current_user.email %>  <%= link_to "Log out", log_out_path %>
 <div class="content">
 
 
+
 <table border="1" bordercolor="#FFFFFF" style="background-color:#FFFFCC" width="80%" cellpadding="3" cellspacing="3">
 	<tr>
 		<td><li><h7><a href=/databases/search> Search Seizure</a><h7></li></td>
@@ -91,21 +91,25 @@ Welcome, <%= current_user.email %>  <%= link_to "Log out", log_out_path %>
 		<td><li><h7><a href=/pages/support> Support Tools</a><h7></li></td>
 	</tr>
 	<tr>
-		<td><li><h7><a href=/sessions/new> Admin login for further access</a><h7></li>
+		<td><li><h7><a href=/databases/complete_index> Complete Database</a><h7></li>
 </td>
 	</tr>
-
+	<tr>
+		<td><li><h7><a href=/databases/all> Seizure summary</a><h7></li></td>
+	</tr>
+	<tr>
+		<td><li><h7><a href=/databases/audit> users infomation</a><h7></li></td>
+	</tr>
 </table>
 
 
 
 
-
 </br>
 </br>
 </br>
 </br>
-<p>We can design this page better later. this text is just for our base </p>
+<p></p>
 
 
 </div>

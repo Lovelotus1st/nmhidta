@@ -17,14 +17,14 @@
 <div id="templatemo_wrapper">
 
 	<div id="templatemo_menu">
- <!--               
-        <ul>
-            <li><a href="index.html" class="current">Home</a></li>
-            <li><a href="pages/faqs.html">New Entry</a></li>
-            <li><a href="pages/about.html">Search</a></li>
-            <li><a href="pages/contact.html">Contact</a></li>
-        </ul>	
- -->    
+             
+<ul>
+<li><a href="/home">Home</a></li>
+<li><a href="/databases/new">New Form</a></li>
+<li><a href="/databases/search.html">Search</a></li>
+<li><a href="pages/support.html">Support</a></li>
+</ul>	
+  
     </div> <!-- menu -->
 
     <div id="templatemo_left_column">
@@ -74,7 +74,7 @@
         	
         	<br />
         	<br />
-        	<h1>Please login</h1>
+        	<h1>Admin login</h1>
 
 <div id="user_nav">
 <div id="user_nav_login">
@@ -88,7 +88,7 @@
 
 <%= form_tag sessions_path do %>
 <p>
-<%= label_tag :email %><br />
+<%= label_tag :User %><br />
 <%= text_field_tag :email, params[:email] %>
 </p>
 <p>

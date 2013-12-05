@@ -61,29 +61,49 @@
  <!------------------------------------------------------------------------->       
         <div id="templatemo_main">
         <h7>Search Database</h7></br>
-        Enter as much information as possible.
-               
 
-</br>
-<h7>Databases</h7>
-</br>
+               
+<table border="1" bordercolor="#CCFFCC" style="background-color:#CCCC99" width="100%" cellpadding="1" cellspacing="1">
+<tr><td>
+
 <%= form_tag databases_path, :method => 'get' do %>
 
-<table border="0" bordercolor="#0000CC" style="background-color:#CCCC99" width="100%" cellpadding="1" cellspacing="1">
+<table border="1" bordercolor="#000000" style="background-color:#CCCC99" width="100%" cellpadding="1" cellspacing="1">
 <tr>
-<td style="width:80px;height:10px;"> Seizing Taskforce:</td><td><%= text_field_tag :search, params[:search] %></td>
-<td style="width:80px;height:10px;"> Time:</td><td><%= text_field_tag :search, params[:search] %></td>
+<td style="width:200px;height:10px;"><h7> Search Entire Database</h7></td><td><%= text_field_tag :search, params[:search], :size =>40 %></td><td>    <%= submit_tag "search", :name => nil %>   </td>
 </tr>
+</table>
+<% end %>
+</br>
+
+<%= form_tag vehicles_path, :method => 'get' do %>
+<table border="1" bordercolor="#000000" style="background-color:#CCCC99" width="100%" cellpadding="1" cellspacing="1">
 <tr>
-<td style="width:80px;height:10px;"> CJIS:</td> <td><%= text_field_tag :search, params[:search] %></td>
+<td style="width:200px;height:10px;"><h7> Search by Vehicles</h7></td><td><%= text_field_tag :search, params[:search], :size =>40 %></td><td>    <%= submit_tag "search", :name => nil %>   </td>
 </tr>
-<tr><td>    <%= submit_tag "search", :name => nil %>   </td></tr>
+</table>
+</br>
+<% end %>
+<%= form_tag subjects_path, :method => 'get' do %>
+<table border="1" bordercolor="#000000" style="background-color:#CCCC99" width="100%" cellpadding="1" cellspacing="1">
+<tr>
+<td style="width:200px;height:10px;"><h7> Search by subject</h7></td><td><%= text_field_tag :search, params[:search], :size =>40 %></td><td>    <%= submit_tag "search", :name => nil %>   </td>
+</tr>
+</table>
+</br>
+<% end %>
+<%= form_tag drugs_path, :method => 'get' do %>
+<table border="1" bordercolor="#000000" style="background-color:#CCCC99" width="100%" cellpadding="1" cellspacing="1">
+<tr>
+<td style="width:200px;height:10px;"><h7> Search by drugs</h7></td><td><%= text_field_tag :search, params[:search], :size =>40 %></td><td>    <%= submit_tag "search", :name => nil %>   </td>
+</tr>
 </table>
 <% end %>
 
 
-
-
+</td>
+</tr>
+</table>
 
       
         

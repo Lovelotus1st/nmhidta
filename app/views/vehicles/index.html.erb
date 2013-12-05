@@ -1,8 +1,51 @@
-<h7>Listing vehicles</h7>
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>New Database</title>
+<meta name="keywords" content="clean blog template, about page, html css layout" />
+<meta name="description" content="Clean Blog Template is a W3C standards-compliant HTML-CSS layout by templatemo.com" />
+<link href="templatemo_style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="form_wrapper">
 
-<table>
+	<div id="templatemo_menu">
+                
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/databases/new">New Entry</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="/pages/support.html">Support</a></li>
+        </ul>	
+    
+    </div> <!-- menu -->
+
+    
+    <div id="form_right_column">
+    
+    
+ <!------------------------------------------------------------------------->       
+        <div id="form_main">
+
+
+        
+
+
+   <h7>Vehicles</h7>
+<%= form_tag vehicles_path, :method => 'get' do %>
+<table border="1" bordercolor="#000000" style="background-color:#CCCC99" width="100%" cellpadding="1" cellspacing="1">
+<tr>
+<td style="width:200px;height:10px;"><h7> Search by Vehicles</h7></td><td><%= text_field_tag :search, params[:search], :size =>40 %></td><td>    <%= submit_tag "search", :name => nil %>   </td>
+</tr>
+</table>
+</br>
+<% end %>
+</br>
+
+<table border="1" bordercolor="#000000" style="background-color:#F7F8E0" width="100%" cellpadding="3" cellspacing="1">
   <tr>
-    <th>Database</th>
+    <th>ID</th>
     <th>Make</th>
     <th>Model</th>
     <th>Year</th>
@@ -10,30 +53,41 @@
     <th>State</th>
     <th>Color</th>
     <th>Registered owner</th>
-    <th>Note</th>
-    <th></th>
-    <th></th>
-    <th></th>
+
   </tr>
 
 <% @vehicles.each do |vehicle| %>
   <tr>
-    <td><%= vehicle.database_id %></td>
-    <td><%= vehicle.make %></td>
-    <td><%= vehicle.model %></td>
-    <td><%= vehicle.year %></td>
-    <td><%= vehicle.lic_plate %></td>
-    <td><%= vehicle.state %></td>
-    <td><%= vehicle.color %></td>
-    <td><%= vehicle.registered_owner %></td>
-    <td><%= vehicle.note %></td>
-    <td><%= link_to 'Show', vehicle %></td>
-    <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
-    <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <td><%= link_to vehicle.database_id, vehicle %></td>
+    <td><%= link_to vehicle.make, vehicle %></td>
+    <td><%= link_to vehicle.model, vehicle %></td>
+    <td><%= link_to vehicle.year, vehicle %></td>
+    <td><%= link_to vehicle.lic_plate, vehicle %></td>
+    <td><%= link_to vehicle.state, vehicle %></td>
+    <td><%= link_to vehicle.color, vehicle %></td>
+    <td><%= link_to vehicle.registered_owner, vehicle %></td>
+   </tr>
 <% end %>
 </table>
+     
+        
+        </div>
+  <!------------------------------------------------------------------------->    
+  <div class="cleaner"></div>
+  </div> 
+    <!-- end of templatemo_main -->
+  <div class="cleaner_h20"></div>
+  
+  	<div id="templatemo_footer">
+    
+		Copyright © 2013 <a href="#">NMHIDTA</a> | 
+        <a href="http://nmhidta.org" target="_parent">Database</a> by <a href="http://www.unm.edu" target="_parent">Green team</a>
+        
+    </div>
+  
+    <div class="cleaner"></div>
+</div> <!-- end of warpper -->
 
-<br />
+</body>
+</html>
 
-<%= link_to 'New Vehicle', new_vehicle_path %>

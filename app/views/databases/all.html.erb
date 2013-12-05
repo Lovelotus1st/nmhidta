@@ -63,19 +63,17 @@
 
 
 </br>
-<h8>Active Users:</h8>
-<table border="0" bordercolor="#000000" style="background-color:#A9F5A9" width="100%" cellpadding="3" cellspacing="1">
-<% @users.each do |user| %>
-<tr>
-<td> <%= user.email  %></td><td>user since</td> <td><%= user.created_at  %></td>
-</tr>
 
-<% end %>
-<tr><td> <%= link_to "Add Users ?", sign_up_path %> </td></tr>
-</table>
 
 </br>
-
+<h8>All Initial Seizure</h8>
+<table border="0" bordercolor="#000000" style="background-color:#F7F8E0" width="100%" cellpadding="3" cellspacing="1">
+<% @databases.each do |database| %>
+<tr>
+<td>Seizue report by <%= link_to database.seizing_taskforce, database  %> entered at <%=  database.created_at %> by <%= current_user.email %> </td>
+</tr>
+<% end %>
+</table>
 
 
 
