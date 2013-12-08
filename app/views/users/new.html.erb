@@ -93,7 +93,7 @@
   <% end %>
   <p>
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.email_field :email, :required => true, :autofocus => true  %>
   </p>
   <p>
     <%= f.label :password %><br />

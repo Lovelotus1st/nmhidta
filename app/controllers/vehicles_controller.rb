@@ -3,12 +3,20 @@ class VehiclesController < ApplicationController
   # GET /vehicles.json
   def index
     @vehicles = Vehicle.all
-
+    @vehicles = Vehicle.search(params[:search])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @vehicles }
     end
   end
+
+
+  def search
+    @vehicles = Vehicle.search(params[:search])
+
+  end 
+
+
 
   # GET /vehicles/1
   # GET /vehicles/1.json

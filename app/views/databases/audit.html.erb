@@ -67,7 +67,10 @@
 <table border="0" bordercolor="#000000" style="background-color:#A9F5A9" width="100%" cellpadding="3" cellspacing="1">
 <% @users.each do |user| %>
 <tr>
-<td> <%= user.email  %></td><td>user since</td> <td><%= user.created_at  %></td>
+<td> <%= user.email  %></td><td>user since</td> <td><%= user.created_at  %></td> 
+
+
+<td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
 </tr>
 
 <% end %>

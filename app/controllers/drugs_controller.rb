@@ -4,11 +4,19 @@ class DrugsController < ApplicationController
   def index
     @drugs = Drug.all
 
+    @drugs = Drug.search(params[:search])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @drugs }
     end
   end
+  
+  
+  
+ def search
+    @drugs = Drug.search(params[:search])
+  end
+  
 
   # GET /drugs/1
   # GET /drugs/1.json

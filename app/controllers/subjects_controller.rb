@@ -4,11 +4,21 @@ class SubjectsController < ApplicationController
   def index
     @subjects = Subject.all
 
+    @subjects = Subject.search(params[:search])
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @subjects }
     end
   end
+
+
+
+  def search
+
+    @subjects = Subject.search(params[:search])
+
+  end 
 
   # GET /subjects/1
   # GET /subjects/1.json

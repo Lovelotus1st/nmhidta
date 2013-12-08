@@ -13,7 +13,7 @@ get "home/index"
 get "databases/search"
 get "databases/complete_index"
 get "databases/audit"
-get "databases/all"
+get "databases/seizure"
   resources :databases do
   			resources :drugs
   			resources :subjects

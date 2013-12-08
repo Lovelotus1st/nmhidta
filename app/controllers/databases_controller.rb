@@ -7,6 +7,9 @@ class DatabasesController < ApplicationController
     @drugs = Drug.all
     @databases = Database.all
     @databases = Database.search(params[:search])
+    @vehicles = Vehicle.search(params[:search])
+    @subjects = Subject.search(params[:search])
+    @drugs = Drug.search(params[:search])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @databases }
@@ -30,7 +33,7 @@ def complete_index
   
   
   
-   def all
+   def seizure
     @vehicles = Vehicle.all
     @subjects = Subject.all
     @drugs = Drug.all
@@ -62,6 +65,7 @@ def complete_index
   
 
   def search
+
     @databases = Database.search(params[:search])
   end 
   

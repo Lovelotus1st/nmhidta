@@ -6,7 +6,103 @@ class Database < ActiveRecord::Base
 def self.search(search)
   if search
     key = "%#{search}%"
-    find(:all, :conditions => ['time LIKE ? OR cjis LIKE ? OR seizing_taskforce LIKE ?', key, key, key])
+    find(:all, :conditions => ['  seizing_taskforce
+          						  LIKE ? OR investigating_agency
+          						  LIKE ? OR agency_case
+          						  LIKE ? OR cjis
+          						  LIKE ? OR hidta_initiative
+          						  LIKE ? OR date_of_seizure
+          						  LIKE ? OR time
+          						  LIKE ? OR day_of_the_week
+          						  LIKE ? OR type_of_event
+          						  LIKE ? OR she_operation
+          						  LIKE ? OR Road
+          						  LIKE ? OR mile_marker
+          						  LIKE ? OR direction
+          						  LIKE ? OR street_address
+          						  LIKE ? OR city
+          						  LIKE ? OR country
+          						  LIKE ? OR state
+          						  LIKE ? OR zip
+          						  LIKE ? OR drug1
+          						  LIKE ? OR drug1_amount
+          						  LIKE ? OR rice1
+          						  LIKE ? OR drug2
+          						  LIKE ? OR drug2_amount
+          						  LIKE ? OR price2
+          						  LIKE ? OR drug3
+          						  LIKE ? OR drug3_amount
+          						  LIKE ? OR price3
+          						  LIKE ? OR name1
+          						  LIKE ? OR dob1
+          						  LIKE ? OR ssn1
+          						  LIKE ? OR oln1
+          						  LIKE ? OR gender1
+          						  LIKE ? OR address1
+          						  LIKE ? OR city1
+          						  LIKE ? OR state1
+          						  LIKE ? OR zip1
+          						  LIKE ? OR subject1
+          						  LIKE ? OR misc1
+          						  LIKE ? OR citizenship1
+          						  LIKE ? OR picture1
+          						  LIKE ? OR tel_no1
+          						  LIKE ? OR tel_data2
+          						  LIKE ? OR name2
+          						  LIKE ? OR dob2
+          						  LIKE ? OR ssn2
+          						  LIKE ? OR oln2
+          						  LIKE ? OR gender2
+          						  LIKE ? OR address2
+          						  LIKE ? OR city2
+          						  LIKE ? OR state2
+          						  LIKE ? OR zip2
+          						  LIKE ? OR subject2
+          						  LIKE ? OR misc2
+          						  LIKE ? OR citizenship2
+          						  LIKE ? OR picture2
+          						  LIKE ? OR tel_no2
+          						  LIKE ? OR tel_data2
+          						  LIKE ? OR vehicle_seized
+          						  LIKE ? OR vehicle1make
+          						  LIKE ? OR vehicle1model
+          						  LIKE ? OR vehicle1year
+          						  LIKE ? OR vehicle1lic_place
+          						  LIKE ? OR vehicle1_state
+          						  LIKE ? OR vehicle1_color
+          						  LIKE ? OR vehicle1_reg_owner
+          						  LIKE ? OR vehicle2make
+          						  LIKE ? OR vehicle2model2
+          						  LIKE ? OR vehicle2year
+          						  LIKE ? OR vehicle2lic_place
+          						  LIKE ? OR vehicle2_state
+          						  LIKE ? OR vehicle2_color
+          						  LIKE ? OR vehicle2_reg_owner
+          						  LIKE ? OR linked_to
+          						  LIKE ? OR name_of_organization
+          						  LIKE ? OR agent_contact
+          						  LIKE ? OR agent_tel
+          						  LIKE ? OR analy_support
+          						  LIKE ? OR support_method
+          						  LIKE ? OR conceal_method
+          						  LIKE ? OR false_compart
+          						  LIKE ? OR comp_location
+          						  LIKE ? OR if_cargo
+          						  LIKE ? OR k9
+          						  LIKE ? OR lab_inhouse
+          						  LIKE ? OR applicable
+          						  LIKE ? OR extra1
+          						  LIKE ? OR extra2
+          						  LIKE ? OR extra3
+          						  LIKE ? OR extra4
+          						  LIKE ? OR extra5
+          						  LIKE ? OR extra6
+          						  LIKE ? OR extra7
+          						  LIKE ? OR extra8
+          						  LIKE ? OR extra9
+          						  LIKE ? OR extra10
+          						  LIKE ? OR extra11
+          						  LIKE ? OR extra12 LIKE ?  ', key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key, key ])
   else
     find(:all)
   end

@@ -11,4 +11,21 @@ def create
     render "new"
   end
 end
+
+
+
+
+  def destroy
+    @user = user.find(params[:id])
+    @user.destroy
+
+    respond_to do |format|
+      format.html { redirect_to root_url }
+      format.json { head :no_content }
+    end
+  end
+  
+  
+  
+  
 end
